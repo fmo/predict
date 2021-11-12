@@ -66,6 +66,13 @@ function getTheGuess(e){
 }
 
 function populateGames(){
+
+    if (!localStorage.getItem('games')) {
+        localStorage.setItem('games', JSON.stringify(games))
+    } else {
+        games = JSON.parse(localStorage.getItem('games'));
+    }
+
     let html = '';
 
     games.forEach(function(game){
