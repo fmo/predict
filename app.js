@@ -7,14 +7,6 @@ window.addEventListener('load', populateGames);
 
 document.querySelector('.games').addEventListener('focusout', getTheGuess);
 
-document.querySelector('.btn').addEventListener('click', guess);
-
-function guess(e){
-    
-
-    e.preventDefault();
-}
-
 
 function getTheGuess(e){
     let homeTeamGuess, awayTeamGuess, gamess;
@@ -60,9 +52,9 @@ function getTheGuess(e){
         });
     }
 
-    games = guessedGames;
+    localStorage.setItem('games', JSON.stringify(guessedGames));
 
-    console.log(games);
+    populateGames();
 }
 
 function populateGames(){
@@ -76,14 +68,18 @@ function populateGames(){
     let html = '';
 
     games.forEach(function(game){
+
+        let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
+        let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
+
         html += `
         <div id="game-${game.id}" class="form-group fs-2 justify-content-center row mt-2 align-items-center shadow p-3 mb-5 bg-body rounded">
             <div class="col-4 text-end">${game.homeTeam}</div>
             <div class="col-1">
-                <input type="text" class="form-control form-control-sm w-50 home-team"> 
+                <input type="text" value="${homeTeamVal}" class="form-control form-control-sm w-50 home-team"> 
             </div>
             <div class="col-1">
-                <input type="text" class="form-control form-control-sm w-50 away-team"> 
+                <input type="text" value="${awayTeamVal}" class="form-control form-control-sm w-50 away-team"> 
             </div>
             <div class="col-4 text-start">${game.awayTeam}</div>
         </div>`;
