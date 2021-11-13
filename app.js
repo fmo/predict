@@ -27,6 +27,43 @@ document.getElementById('add-new-game-parent').addEventListener('click', functio
         document.querySelector('.add-game-btn').classList.remove('cancel-add-game');
         return;
     }
+
+    if (e.target.classList.contains('submit-new-game')){
+
+        let allGames = JSON.parse(localStorage.getItem('games'));
+        let newGame = {};
+
+        newGame.id = allGames.length + 1;
+        newGame.homeTeam = document.querySelector('.new-home-team').value;
+        newGame.awayTeam = document.querySelector('.new-away-team').value;
+        newGame.homeTeamGuess = "";
+        newGame.awayTeamGuess = "";
+        
+        games.push(newGame);
+
+        localStorage.setItem('games', JSON.stringify(games));
+
+        const successDiv = document.createElement('div');
+        successDiv.className = "alert alert-success mt-2";
+        successDiv.appendChild(document.createTextNode("New game has been added"));
+        const container = document.getElementById('add-new-game-parent');
+        const form = document.getElementById('add-game');
+        container.insertBefore(successDiv, form);
+
+        setTimeout(() => {
+            const currentAlert = document.querySelector('.alert');
+            if(currentAlert) {
+                currentAlert.remove();
+            }
+        }, 3000);
+
+        document.querySelector('.new-home-team').value = '';
+        document.querySelector('.new-away-team').value = '';
+
+        populateGames();
+
+        return;
+    }
 });
 
 
