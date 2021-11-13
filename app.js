@@ -7,11 +7,31 @@ let games = [
 
 window.addEventListener('load', populateGames);
 
+document.getElementById('add-game').style.display = 'none';
+
 document.querySelector('.games').addEventListener('focusout', getTheGuess);
+
+document.getElementById('add-new-game-parent').addEventListener('click', function(e){
+    if (e.target.classList.contains('add-game-btn')) {
+        document.getElementById('add-game').style.display = 'block';
+        document.querySelector('.add-game-btn').value = 'Back To Game!';
+        document.querySelector('.add-game-btn').classList.add('cancel-add-game');
+        document.querySelector('.cancel-add-game').classList.remove('add-game-btn');
+        return;
+    }
+
+    if (e.target.classList.contains('cancel-add-game')) {
+        document.getElementById('add-game').style.display = 'none';
+        document.querySelector('.cancel-add-game').value = 'Add A Game!';
+        document.querySelector('.cancel-add-game').classList.add('add-game-btn');
+        document.querySelector('.add-game-btn').classList.remove('cancel-add-game');
+        return;
+    }
+});
 
 
 function getTheGuess(e){
-    let homeTeamGuess, awayTeamGuess, gamess;
+    let homeTeamGuess, awayTeamGuess;
 
     let guessedGames = [];
 
@@ -22,6 +42,17 @@ function getTheGuess(e){
 
         homeTeamGuess = e.target.value;
 
+        if (homeTeamGuess < 0 ) {
+            e.target.classList.add('is-invalid');
+            return;
+        }
+
+        const re = /^[0-9]{1,2}$/;
+
+        if (!re.test(homeTeamGuess) || homeTeamGuess > 15) {
+            e.target.classList.add('is-invalid');
+            return;
+        }
         
         games.forEach(function(game) {
             if (game.id === id) {
@@ -41,6 +72,18 @@ function getTheGuess(e){
         const id = parseInt(gameIdArr[1]);
 
         awayTeamGuess = e.target.value;
+
+        if (awayTeamGuess < 0) {
+            e.target.classList.add('is-invalid');
+            return;
+        }
+
+        const re = /^[0-9]{1,2}$/;
+
+        if (!re.test(awayTeamGuess) || awayTeamGuess > 15) {
+            e.target.classList.add('is-invalid');
+            return;
+        }
 
         games.forEach(function(game) {
             if (game.id === id) {
@@ -78,8 +121,8 @@ function populateGames(){
         <div id="game-${game.id}" class="form-group fs-2 justify-content-center row mt-2 align-items-center shadow p-3 mb-5 bg-body rounded">
             <div class="col-4 text-end">${game.homeTeam}</div>
             <div class="input-group input-group-sm w-25">
-                <input type="number" value="${homeTeamVal}" class="form-control home-team"> 
-                <input type="number" value="${awayTeamVal}" class="form-control away-team"> 
+                <input type="text" value="${homeTeamVal}" class="form-control home-team"> 
+                <input type="text" value="${awayTeamVal}" class="form-control away-team"> 
             </div>
             <div class="col-4 text-start">${game.awayTeam}</div>
         </div>`;
