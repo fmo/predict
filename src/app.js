@@ -1,10 +1,7 @@
+import { games } from './games';
 import { ui } from './ui';
+import { storage } from './storage';
 import "bootstrap/dist/css/bootstrap.min.css";
-
-let games = [
-    { "id": 1, "homeTeam": "Fenerbahce", "awayTeam": "Galatasaray", "homeTeamGuess": "", "awayTeamGuess": "" },
-    { "id": 2, "homeTeam": "Besiktas", "awayTeam": "Trabzonspor", "homeTeamGuess": "", "awayTeamGuess": "" },
-];
 
 window.addEventListener('load', populateGames);
 
@@ -31,18 +28,12 @@ document.getElementById('add-new-game-parent').addEventListener('click', functio
 
     if (e.target.classList.contains('submit-new-game')){
 
-        let allGames = JSON.parse(localStorage.getItem('games'));
-        let newGame = {};
+        // TODO Check if the data is there. 
 
-        newGame.id = allGames.length + 1;
-        newGame.homeTeam = document.querySelector('.new-home-team').value;
-        newGame.awayTeam = document.querySelector('.new-away-team').value;
-        newGame.homeTeamGuess = "";
-        newGame.awayTeamGuess = "";
-        
-        games.push(newGame);
+        const newGameHomeTeam = document.querySelector('.new-home-team');
+        const newGameAwayTeam = document.querySelector('.new-away-team');
 
-        localStorage.setItem('games', JSON.stringify(games));
+        storage.addGame(newGameHomeTeam.value, newGameAwayTeam.value);
 
         const successDiv = document.createElement('div');
         successDiv.className = "alert alert-success mt-2";
@@ -58,8 +49,8 @@ document.getElementById('add-new-game-parent').addEventListener('click', functio
             }
         }, 3000);
 
-        document.querySelector('.new-home-team').value = '';
-        document.querySelector('.new-away-team').value = '';
+        newGameHomeTeam.value = '';
+        newGameAwayTeam.value = '';
 
         populateGames();
 
