@@ -12,17 +12,15 @@ document.querySelector('.games').addEventListener('focusout', getTheGuess);
 document.getElementById('add-new-game-parent').addEventListener('click', function(e){
     if (e.target.classList.contains('add-game-btn')) {
         document.getElementById('add-game').style.display = 'block';
-        document.querySelector('.add-game-btn').value = 'Back To Game!';
-        document.querySelector('.add-game-btn').classList.add('cancel-add-game');
-        document.querySelector('.cancel-add-game').classList.remove('add-game-btn');
+        ui.createButton('Back To The Game!', 'btn btn-primary cancel-add-game');
+        document.querySelector('.add-game-btn').remove();
         return;
     }
 
     if (e.target.classList.contains('cancel-add-game')) {
         document.getElementById('add-game').style.display = 'none';
-        document.querySelector('.cancel-add-game').value = 'Add A Game!';
-        document.querySelector('.cancel-add-game').classList.add('add-game-btn');
-        document.querySelector('.add-game-btn').classList.remove('cancel-add-game');
+        ui.createButton('Add A Game!', 'btn btn-primary add-game-btn');
+        document.querySelector('.cancel-add-game').remove();
         return;
     }
 

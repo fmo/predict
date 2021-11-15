@@ -3,6 +3,17 @@ class UI{
 
     }
 
+    createButton(val, className){
+        let input = document.createElement('input');
+        input.type = 'button';
+        input.value = val;
+        input.className = className;
+
+        const container = document.getElementById('add-new-game-parent');
+        const form = document.getElementById('add-game');
+        container.insertBefore(input, form);
+    }
+
     populateGames(games){
         let html = '';
 
