@@ -3,6 +3,12 @@ class UI{
 
     }
 
+    getGameId(gameId) {
+        const gameIdArr = gameId.split('-');
+        
+        return parseInt(gameIdArr[1]);
+    }
+
     createButton(val, className){
         let input = document.createElement('input');
         input.type = 'button';

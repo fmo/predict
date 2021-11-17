@@ -96,11 +96,8 @@ function updateGames(guess, whichTeam, id) {
 
 
 function saveTheGuess(e) {
-    const gameId = e.target.parentNode.parentNode.id;
-    const gameIdArr = gameId.split('-');
-    const id = parseInt(gameIdArr[1]);
-
-    let guess = e.target.value;
+    const id = ui.getGameId(e.target.parentNode.parentNode.id);
+    const guess = e.target.value;
 
     if (!validGuess(guess)) {
         e.target.classList.add('is-invalid');
