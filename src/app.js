@@ -56,26 +56,22 @@ document.getElementById('add-new-game-parent').addEventListener('click', functio
     }
 });
 
-function updateGames(e, whichTeam){
-    const gameId = e.target.parentNode.parentNode.id;
-    const gameIdArr = gameId.split('-');
-    const id = parseInt(gameIdArr[1]);
-    
-    let guess, guessedGames = [];
-
-    guess = e.target.value;
-
+function validGuess(guess) {
     if (guess < 0 ) {
-        e.target.classList.add('is-invalid');
-        return;
+        return false;
     }
 
     const re = /^[0-9]{1,2}$/;
 
     if (!re.test(guess) || guess > 15) {
-        e.target.classList.add('is-invalid');
-        return;
+        return false;
     }
+
+    return true;
+}
+
+function updateGames(guess, whichTeam, id) {
+    let guessedGames = [];
     
     games.forEach(function(game) {
         if (game.id === id) {
@@ -99,20 +95,29 @@ function updateGames(e, whichTeam){
 }
 
 
-function saveTheGuess(e){
+function saveTheGuess(e) {
+    const gameId = e.target.parentNode.parentNode.id;
+    const gameIdArr = gameId.split('-');
+    const id = parseInt(gameIdArr[1]);
+
+    let guess = e.target.value;
+
+    if (!validGuess(guess)) {
+        e.target.classList.add('is-invalid');
+        return;
+    }
+
     let guessedGames = [];
 
-    if(e.target.classList.contains('home-team')){
-        guessedGames = updateGames(e, 'home-team');
+    if (e.target.classList.contains('home-team')){
+        guessedGames = updateGames(guess, 'home-team', id);
     }
 
-    if(e.target.classList.contains('away-team')){
-        guessedGames = updateGames(e, 'away-team');
+    if (e.target.classList.contains('away-team')){
+        guessedGames = updateGames(guess, 'away-team', id);
     }
 
-    if (guessedGames) {
-        localStorage.setItem('games', JSON.stringify(guessedGames));
-    }
+    localStorage.setItem('games', JSON.stringify(guessedGames));
 
     populateGames();
 }
