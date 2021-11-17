@@ -7,7 +7,7 @@ window.addEventListener('load', populateGames);
 
 document.getElementById('add-game').style.display = 'none';
 
-document.querySelector('.games').addEventListener('focusout', getTheGuess);
+document.querySelector('.games').addEventListener('focusout', saveTheGuess);
 
 document.getElementById('add-new-game-parent').addEventListener('click', function(e){
     if (e.target.classList.contains('add-game-btn')) {
@@ -56,75 +56,63 @@ document.getElementById('add-new-game-parent').addEventListener('click', functio
     }
 });
 
+function updateGames(e, whichTeam){
+    const gameId = e.target.parentNode.parentNode.id;
+    const gameIdArr = gameId.split('-');
+    const id = parseInt(gameIdArr[1]);
+    
+    let guess, guessedGames = [];
 
-function getTheGuess(e){
-    let homeTeamGuess, awayTeamGuess;
+    guess = e.target.value;
 
+    if (guess < 0 ) {
+        e.target.classList.add('is-invalid');
+        return;
+    }
+
+    const re = /^[0-9]{1,2}$/;
+
+    if (!re.test(guess) || guess > 15) {
+        e.target.classList.add('is-invalid');
+        return;
+    }
+    
+    games.forEach(function(game) {
+        if (game.id === id) {
+            if (whichTeam === 'home-team') {
+                game = { 
+                    ...game, 
+                    "homeTeamGuess": guess, 
+                }
+            } else {
+                game = { 
+                    ...game, 
+                    "awayTeamGuess": guess, 
+                }
+            }
+        }
+
+        guessedGames.push(game);
+    });
+
+    return guessedGames;
+}
+
+
+function saveTheGuess(e){
     let guessedGames = [];
 
     if(e.target.classList.contains('home-team')){
-        const gameId = e.target.parentNode.parentNode.id;
-        const gameIdArr = gameId.split('-');
-        const id = parseInt(gameIdArr[1]);
-
-        homeTeamGuess = e.target.value;
-
-        if (homeTeamGuess < 0 ) {
-            e.target.classList.add('is-invalid');
-            return;
-        }
-
-        const re = /^[0-9]{1,2}$/;
-
-        if (!re.test(homeTeamGuess) || homeTeamGuess > 15) {
-            e.target.classList.add('is-invalid');
-            return;
-        }
-        
-        games.forEach(function(game) {
-            if (game.id === id) {
-                game = { 
-                    ...game, 
-                    "homeTeamGuess": homeTeamGuess, 
-                }
-            }
-
-            guessedGames.push(game);
-        });
+        guessedGames = updateGames(e, 'home-team');
     }
 
     if(e.target.classList.contains('away-team')){
-        const gameId = e.target.parentNode.parentNode.id;
-        const gameIdArr = gameId.split('-');
-        const id = parseInt(gameIdArr[1]);
-
-        awayTeamGuess = e.target.value;
-
-        if (awayTeamGuess < 0) {
-            e.target.classList.add('is-invalid');
-            return;
-        }
-
-        const re = /^[0-9]{1,2}$/;
-
-        if (!re.test(awayTeamGuess) || awayTeamGuess > 15) {
-            e.target.classList.add('is-invalid');
-            return;
-        }
-
-        games.forEach(function(game) {
-            if (game.id === id) {
-                game = { 
-                    ...game, 
-                    "awayTeamGuess": awayTeamGuess, 
-                }
-            }
-
-            guessedGames.push(game);
-        });
+        guessedGames = updateGames(e, 'away-team');
     }
 
-    localStorage.setItem('games', JSON.stringify(guessedGames));
+    if (guessedGames) {
+        localStorage.setItem('games', JSON.stringify(guessedGames));
+    }
 
     populateGames();
 }
