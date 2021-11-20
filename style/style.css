@@ -51,7 +51,7 @@ a {
 
 .game {
     display: flex;
-    margin: 0 0 20px 0;
+    margin: 0 0 40px 0;
     padding: 10px;
     box-shadow: 20px 10px 20px rgb(168 168 168)
 }
