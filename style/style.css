@@ -1,43 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato');
 
-* {
-    /* Add border and padding sizes to the total */
+/* * {
+    Use this section to reset all elements
+    Add border and padding sizes to the total
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
+} */
+
+
+/* Main Elements */
 
 body {
     font-family: 'Lato', sans-serif;
     color: #333;
     line-height: 1.6;
-    font-size: 20px;
-}
-
-input[type='text'] { 
-    font-size: 24px; 
-    width: 30px; 
-    padding: 5px;
-}
-
-.new-game-form input[type='text'] {
-    display: block;
-    width: 100%;
-    padding: 3px;
-    margin: 10px 0 10px 0;
-    color: #333;
-}
-
-.button { 
-    background-color: #333;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-}
-
-.button:hover {
-    background-color:darkcyan;
-    color: #fff;
+    font-size: 16px;
+    margin: 0;
 }
 
 a {
@@ -45,18 +22,26 @@ a {
     color: #333;
 }
 
+
+/* Navbar */
 .navbar {
     background-color: #047aed;
     color: #fff;
-    height: 70px;
 }
 
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    overflow: auto;
-    padding: 0 40px;
+.navbar .container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
 }
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* Game Section */
 
 .games {
     margin: 10px auto;
@@ -84,4 +69,39 @@ a {
 .away-team {
     flex: 1;
     margin: 0 20px 0 0;
+}
+
+/* Form elements */
+
+input[type='text'] { 
+    font-size: 24px; 
+    width: 30px; 
+    padding: 5px;
+}
+
+.new-game-form input[type='text'] {
+    display: block;
+    width: 100%;
+    padding: 3px;
+    margin: 10px 0 10px 0;
+    color: #333;
+}
+
+.button { 
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+}
+
+.button:hover {
+    background-color:darkcyan;
+    color: #fff;
+}
+
+@media(max-width: 600px) {
+    .games {
+        max-width: 75%;
+        align-content: center;
+    }
 }
