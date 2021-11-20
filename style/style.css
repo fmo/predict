@@ -44,31 +44,33 @@ a {
 /* Game Section */
 
 .games {
-    margin: 10px auto;
-    max-width: 70%;
+    margin: 30px auto;
+    max-width: 56%;
+    font-size: 38px;
 }
 
 .game {
     display: flex;
-    margin: 0 0 10px 0;
+    margin: 0 0 20px 0;
+    padding: 10px;
+    box-shadow: 20px 10px 20px rgb(168 168 168)
 }
 
-.home-team-label {
+.teams-label {
+    margin: 0 0 0 30px;
     flex: 1;
 }
 
-.away-team-label {
-    flex: 2;
+.score {
+    padding: 0 0 10px 0;
 }
 
 .home-team {
     flex: 1;
-    margin: 0 0 0 10px;
 }
 
 .away-team {
     flex: 1;
-    margin: 0 20px 0 0;
 }
 
 /* Form elements */
@@ -99,9 +101,16 @@ input[type='text'] {
     color: #fff;
 }
 
-@media(max-width: 600px) {
+@media(max-width: 1000px) {
     .games {
-        max-width: 75%;
+        max-width: 80%;
         align-content: center;
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .games {
+        font-size: 30px;
     }
 }

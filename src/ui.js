@@ -30,13 +30,12 @@ class UI{
 
             html += `
             <div id="game-${game.id}" class="game">
-                <div class="home-team-label">${game.homeTeam}</div>
-                <div class="input-group input-group-sm w-25">
+                <div class="teams-label">${game.homeTeam} - ${game.awayTeam}</div>
+                <div class="score">
                     <input type="text" value="${homeTeamVal}" class="home-team"> 
                     <span> - </span>
                     <input type="text" value="${awayTeamVal}" class="away-team"> 
                 </div>
-                <div class="away-team-label">${game.awayTeam}</div>
             </div>`;
         });
 
