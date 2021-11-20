@@ -9,6 +9,12 @@ document.getElementById('add-game').style.display = 'none';
 
 document.querySelector('.games').addEventListener('focusout', saveTheGuess);
 
+document.querySelector('.games').addEventListener('mouseover', showAdmin);
+
+function showAdmin(){
+    
+}
+
 document.getElementById('add-new-game-parent').addEventListener('click', function(e){
     if (e.target.classList.contains('add-game-btn')) {
         document.getElementById('add-game').style.display = 'block';
