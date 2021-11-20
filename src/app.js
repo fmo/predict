@@ -1,7 +1,7 @@
 import { games } from './games';
 import { ui } from './ui';
 import { storage } from './storage';
-import "bootstrap/dist/css/bootstrap.min.css";
+import "../style/style.css"
 
 window.addEventListener('load', populateGames);
 
@@ -12,14 +12,14 @@ document.querySelector('.games').addEventListener('focusout', saveTheGuess);
 document.getElementById('add-new-game-parent').addEventListener('click', function(e){
     if (e.target.classList.contains('add-game-btn')) {
         document.getElementById('add-game').style.display = 'block';
-        ui.createButton('Back To The Game!', 'btn btn-primary cancel-add-game');
+        ui.createButton('Back To The Game!', 'button cancel-add-game');
         document.querySelector('.add-game-btn').remove();
         return;
     }
 
     if (e.target.classList.contains('cancel-add-game')) {
         document.getElementById('add-game').style.display = 'none';
-        ui.createButton('Add A Game!', 'btn btn-primary add-game-btn');
+        ui.createButton('Add A Game!', 'button add-game-btn');
         document.querySelector('.cancel-add-game').remove();
         return;
     }
