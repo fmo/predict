@@ -5,62 +5,7 @@ import "../style/style.css"
 
 window.addEventListener('load', populateGames);
 
-document.getElementById('add-game').style.display = 'none';
-
 document.querySelector('.games').addEventListener('focusout', saveTheGuess);
-
-document.querySelector('.games').addEventListener('mouseover', showAdmin);
-
-function showAdmin(){
-    
-}
-
-document.getElementById('add-new-game-parent').addEventListener('click', function(e){
-    if (e.target.classList.contains('add-game-btn')) {
-        document.getElementById('add-game').style.display = 'block';
-        ui.createButton('Back To The Game!', 'button cancel-add-game');
-        document.querySelector('.add-game-btn').remove();
-        return;
-    }
-
-    if (e.target.classList.contains('cancel-add-game')) {
-        document.getElementById('add-game').style.display = 'none';
-        ui.createButton('Add A Game!', 'button add-game-btn');
-        document.querySelector('.cancel-add-game').remove();
-        return;
-    }
-
-    if (e.target.classList.contains('submit-new-game')){
-
-        // TODO Check if the data is there. 
-
-        const newGameHomeTeam = document.querySelector('.new-home-team');
-        const newGameAwayTeam = document.querySelector('.new-away-team');
-
-        storage.addGame(newGameHomeTeam.value, newGameAwayTeam.value);
-
-        const successDiv = document.createElement('div');
-        successDiv.className = "alert alert-success mt-2";
-        successDiv.appendChild(document.createTextNode("New game has been added"));
-        const container = document.getElementById('add-new-game-parent');
-        const form = document.getElementById('add-game');
-        container.insertBefore(successDiv, form);
-
-        setTimeout(() => {
-            const currentAlert = document.querySelector('.alert');
-            if(currentAlert) {
-                currentAlert.remove();
-            }
-        }, 3000);
-
-        newGameHomeTeam.value = '';
-        newGameAwayTeam.value = '';
-
-        populateGames();
-
-        return;
-    }
-});
 
 function validGuess(guess) {
     if (guess < 0 ) {
