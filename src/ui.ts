@@ -3,7 +3,7 @@ class UI{
 
     }
 
-    getGameId(gameId: any) {
+    getGameId(gameId: string): number {
         const gameIdArr = gameId.split('-');
         
         return parseInt(gameIdArr[1]);
