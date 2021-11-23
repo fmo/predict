@@ -1,3 +1,5 @@
+import { games } from './games'
+
 class UI {
 
     getGameId(gameId: string): number {
@@ -6,11 +8,16 @@ class UI {
         return parseInt(gameIdArr[1]);
     }
 
-    populateGames(games: any){
+    populateGames() {
+        if (!localStorage.getItem('games')) {
+            localStorage.setItem('games', JSON.stringify(games))
+        }
+
+        let allGames = JSON.parse(localStorage.getItem('games'));
+
         let html = '';
 
-        games.forEach(function(game: any){
-
+        allGames.forEach(function(game: any) {
             let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
             let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
 
@@ -25,7 +32,7 @@ class UI {
             </div>`;
         });
 
-        return html;
+        document.querySelector('.games').innerHTML = html;
     }
 }
 

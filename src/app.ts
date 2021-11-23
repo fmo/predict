@@ -1,11 +1,10 @@
-import { games } from './games';
 import { ui } from './ui';
 import { storage } from './storage';
 import "../style/style.scss"
 
-window.addEventListener('load', populateGames);
+window.addEventListener('load', ui.populateGames);
 
-document.querySelector('.games').addEventListener('focusout', saveTheGuess);
+document.querySelector('.games').addEventListener('focusout', makeGuess);
 
 function validGuess(guess: any) {
     const re = /^[0-9]{1,2}$/;
@@ -21,7 +20,7 @@ function validGuess(guess: any) {
     return true;
 }
 
-function saveTheGuess(e: any) {
+function makeGuess(e: any) {
     const id: number = ui.getGameId(e.target.parentNode.parentNode.id);
     const guess = e.target.value;
 
@@ -38,17 +37,7 @@ function saveTheGuess(e: any) {
         storage.updateGames(guess, 'away-team', id);
     }
 
-    populateGames();
+    ui.populateGames();
 }
 
-function populateGames() {
-    if (!localStorage.getItem('games')) {
-        localStorage.setItem('games', JSON.stringify(games))
-    }
 
-    let allGames = JSON.parse(localStorage.getItem('games'));
-
-    let html = ui.populateGames(allGames);
-
-    document.querySelector('.games').innerHTML = html;
-}
