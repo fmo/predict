@@ -1,5 +1,3 @@
-import { games } from './games';
-
 class Storage {
 
     updateGames(guess: number, whichTeam: string, id: number) {
