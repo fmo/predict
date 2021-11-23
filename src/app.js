@@ -1,7 +1,6 @@
 import { games } from './games';
 import { ui } from './ui';
-import { storage } from './storage';
-import "../style/style.css"
+import "../style/style.scss"
 
 window.addEventListener('load', populateGames);
 
