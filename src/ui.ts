@@ -3,13 +3,13 @@ class UI{
 
     }
 
-    getGameId(gameId) {
+    getGameId(gameId: any) {
         const gameIdArr = gameId.split('-');
         
         return parseInt(gameIdArr[1]);
     }
 
-    createButton(val, className){
+    createButton(val: any, className: any){
         let input = document.createElement('input');
         input.type = 'button';
         input.value = val;
@@ -20,10 +20,10 @@ class UI{
         container.insertBefore(input, form);
     }
 
-    populateGames(games){
+    populateGames(games: any){
         let html = '';
 
-        games.forEach(function(game){
+        games.forEach(function(game: any){
 
             let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
             let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';

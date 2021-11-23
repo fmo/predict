@@ -48,7 +48,7 @@ function updateGames(guess: any, whichTeam: any, id: any) {
 
 
 function saveTheGuess(e: any) {
-    const id = ui.getGameId(e.target.parentNode.parentNode.id);
+    const id: number = ui.getGameId(e.target.parentNode.parentNode.id);
     const guess = e.target.value;
 
     if (!validGuess(guess)) {
