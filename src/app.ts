@@ -7,20 +7,20 @@ window.addEventListener('load', populateGames);
 document.querySelector('.games').addEventListener('focusout', saveTheGuess);
 
 function validGuess(guess: any) {
-    if (guess < 0 ) {
-        return false;
-    }
-
     const re = /^[0-9]{1,2}$/;
 
     if (!re.test(guess) || guess > 15) {
         return false;
     }
 
+    if (guess < 0 ) {
+        return false;
+    }
+
     return true;
 }
 
-function updateGames(guess: any, whichTeam: any, id: any) {
+function updateGames(guess: number, whichTeam: string, id: number) {
     let guessedGames: any = [];
     
     let allGames = JSON.parse(localStorage.getItem('games'));
