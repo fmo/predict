@@ -8,4 +8,4 @@ npm run build
 
 ## Visit to see the app
 
-https://app.netlify.com/sites/dazzling-ritchie-2a84a7/overview
+https://dazzling-ritchie-2a84a7.netlify.app/
