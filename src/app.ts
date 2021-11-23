@@ -1,5 +1,6 @@
 import { games } from './games';
 import { ui } from './ui';
+import { storage } from './storage';
 import "../style/style.scss"
 
 window.addEventListener('load', populateGames);
@@ -20,53 +21,22 @@ function validGuess(guess: any) {
     return true;
 }
 
-function updateGames(guess: number, whichTeam: string, id: number) {
-    let guessedGames: any = [];
-    
-    let allGames = JSON.parse(localStorage.getItem('games'));
-
-    allGames.forEach(function(game: any) {
-        if (game.id === id) {
-            if (whichTeam === 'home-team') {
-                game = { 
-                    ...game, 
-                    "homeTeamGuess": guess, 
-                }
-            } else {
-                game = { 
-                    ...game, 
-                    "awayTeamGuess": guess, 
-                }
-            }
-        }
-        
-        guessedGames.push(game);
-    });
-
-    return guessedGames;
-}
-
-
 function saveTheGuess(e: any) {
     const id: number = ui.getGameId(e.target.parentNode.parentNode.id);
     const guess = e.target.value;
 
-    if (!validGuess(guess)) {
+    if (! validGuess(guess)) {
         e.target.classList.add('is-invalid');
         return;
     }
 
-    let guessedGames = [];
-
     if (e.target.classList.contains('home-team')){
-        guessedGames = updateGames(guess, 'home-team', id);
+        storage.updateGames(guess, 'home-team', id);
     }
 
     if (e.target.classList.contains('away-team')){
-        guessedGames = updateGames(guess, 'away-team', id);
+        storage.updateGames(guess, 'away-team', id);
     }
-
-    localStorage.setItem('games', JSON.stringify(guessedGames));
 
     populateGames();
 }

@@ -1,23 +1,9 @@
-class UI{
-    constructor(){
-
-    }
+class UI {
 
     getGameId(gameId: string): number {
         const gameIdArr = gameId.split('-');
         
         return parseInt(gameIdArr[1]);
-    }
-
-    createButton(val: any, className: any){
-        let input = document.createElement('input');
-        input.type = 'button';
-        input.value = val;
-        input.className = className;
-
-        const container = document.getElementById('add-new-game-parent');
-        const form = document.getElementById('add-game');
-        container.insertBefore(input, form);
     }
 
     populateGames(games: any){
