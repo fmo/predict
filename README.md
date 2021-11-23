@@ -8,4 +8,4 @@ npm run build
 
 ## Visit to see the app
 
-https://dazzling-ritchie-2a84a7.netlify.app/
+https://predict-game.netlify.app/
