@@ -5,7 +5,7 @@ class Storage {
         
         let allGames = JSON.parse(localStorage.getItem('games'));
     
-        allGames.forEach(function(game: any) {
+        allGames.forEach((game: any) => {
             if (game.id === id) {
                 if (whichTeam === 'home-team') {
                     game = { 

@@ -1,4 +1,5 @@
 class Util {
+  
   validGuess(guess: any) {
     const re = /^[0-9]{1,2}$/;
 
