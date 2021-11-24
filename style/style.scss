@@ -28,17 +28,17 @@ a {
 .navbar {
   background-color: #047aed;
   color: #fff;
-}
 
-.navbar .container {
-  width: 90%;
-  margin: auto;
-  overflow: hidden;
-}
+  .container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+  }
 
-.navbar a {
-  text-decoration: none;
-  color: #fff;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
 }
 
 /* Game Section */
@@ -47,30 +47,38 @@ a {
   margin: 30px auto;
   max-width: 56%;
   font-size: 38px;
-}
 
-.game {
-  display: flex;
-  margin: 0 0 40px 0;
-  padding: 10px;
-  box-shadow: 20px 10px 20px rgb(168 168 168);
-}
+  .game-date {
+    box-shadow: 20px 10px 20px lightblue;
+    padding: 30px;
+    display: flex;
+    margin: 0 0 40px 0;
+    color: steelblue;
+  }
 
-.teams-label {
-  margin: 0 0 0 30px;
-  flex: 1;
-}
+  .game {
+    display: flex;
+    margin: 0 0 40px 0;
+    padding: 10px;
+    box-shadow: 20px 10px 20px rgb(168 168 168);
+  }
 
-.score {
-  padding: 0 0 10px 0;
-}
+  .teams-label {
+    margin: 0 0 0 30px;
+    flex: 1;
+  }
 
-.home-team {
-  flex: 1;
-}
+  .score {
+    padding: 0 0 10px 0;
+  }
 
-.away-team {
-  flex: 1;
+  .home-team {
+    flex: 1;
+  }
+
+  .away-team {
+    flex: 1;
+  }
 }
 
 /* Form elements */
@@ -79,14 +87,6 @@ input[type="text"] {
   font-size: 24px;
   width: 30px;
   padding: 5px;
-}
-
-.new-game-form input[type="text"] {
-  display: block;
-  width: 100%;
-  padding: 3px;
-  margin: 10px 0 10px 0;
-  color: #333;
 }
 
 .button {

@@ -17,6 +17,8 @@ class UI {
 
         let html = '';
 
+        html += '<div class="game-date">24 NOVEMBER 2021</div>'
+
         allGames.forEach(function(game: any) {
             let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
             let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
