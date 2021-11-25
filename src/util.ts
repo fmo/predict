@@ -1,6 +1,6 @@
 class Util {
   
-  validGuess(guess: any) {
+  validGuess(guess: any): Boolean {
     const re = /^[0-9]{1,2}$/;
 
     if (!re.test(guess) || guess > 15) {

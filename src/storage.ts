@@ -1,6 +1,6 @@
 class Storage {
 
-    updateGames(guess: number, whichTeam: string, id: number) {
+    updateGames(guess: number, whichTeam: string, id: number): void {
         let guessedGames: any = [];
         
         let allGames = JSON.parse(localStorage.getItem('games'));
