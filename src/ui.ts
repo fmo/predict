@@ -2,11 +2,27 @@ import { games } from './games'
 
 class UI {
 
+    constructor() {
+        this.populateGames = this.populateGames.bind(this);
+    }
+
     getGameId(gameId: string): number {
         const gameIdArr = gameId.split('-');
         
         return parseInt(gameIdArr[1]);
     }
+
+    todaysDate() {
+        const date = new Date();
+        const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+        const months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sep', 'Oct', 'November', 'Dec'];
+        const monthsInString = months[month];
+
+        const fullDate = `${day} / ${monthsInString} / ${year}`;
+
+        return fullDate;
+    }
+    
 
     populateGames() {
         if (!localStorage.getItem('games')) {
@@ -17,7 +33,7 @@ class UI {
 
         let html = '';
 
-        html += '<div class="game-date">24 NOVEMBER 2021</div>'
+        html += `<div class="game-date">${this.todaysDate()}</div>`
 
         allGames.forEach(function(game: any) {
             let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
