@@ -1,4 +1,4 @@
-import { games } from './games'
+import { games, Game } from './games'
 
 class UI {
 
@@ -50,7 +50,7 @@ class UI {
             return 0;
         });
 
-        allGames.forEach(function(game: any) {
+        allGames.forEach(function(game: Game) {
             let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
             let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
 

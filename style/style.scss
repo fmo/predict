@@ -60,7 +60,7 @@ a {
     color: red;
     font-size: 18px;
     padding: 10px;
-    margin: 3px 34px 0 0;
+    margin: 14px 34px 0 0;
   }
 
   .game {
@@ -116,11 +116,19 @@ input[type="text"] {
     max-width: 80%;
     align-content: center;
     font-size: 18px;
+
+    .game-time {
+      margin: 0px 34px 0 10px;
+    }
   }
 }
 
 @media (max-width: 1200px) {
   .games {
     font-size: 30px;
+
+    .game-time {
+      margin: 4px 34px 0 10px;
+    }
   }
 }

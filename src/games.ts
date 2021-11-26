@@ -32,3 +32,12 @@ export let games = [
         "gameTime": "21:00" 
     },
 ];
+
+export interface Game {
+    id: Number,
+    homeTeamGuess: Number,
+    awayTeamGuess: Number,
+    homeTeam: String,
+    awayTeam: String,
+    gameTime: String
+}
