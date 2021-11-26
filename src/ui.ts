@@ -40,14 +40,16 @@ class UI {
             let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
 
             html += `
-            <div id="game-${game.id}" class="game">
-                <div class="teams-label">${game.homeTeam} - ${game.awayTeam}</div>
-                <div class="score">
-                    <input type="text" value="${homeTeamVal}" class="home-team"> 
-                    <span> - </span>
-                    <input type="text" value="${awayTeamVal}" class="away-team"> 
+                <div id="game-${game.id}" class="game">
+                    <div class="teams-label">${game.homeTeam} - ${game.awayTeam}</div>
+                    <div class="game-time">${game.gameTime}</div>
+                    <div class="score">
+                        <input type="text" value="${homeTeamVal}" class="home-team"> 
+                        <span> - </span>
+                        <input type="text" value="${awayTeamVal}" class="away-team"> 
+                    </div>
                 </div>
-            </div>`;
+            `;
         });
 
         document.querySelector('.games').innerHTML = html;
