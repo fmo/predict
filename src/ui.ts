@@ -35,9 +35,9 @@ class UI {
 
         html += `<div class="game-date">${this.todaysDate()}</div>`
 
-        allGames.sort((team1: any, team2: any) => {
-            let gameTime1 = parseInt(team1.gameTime);
-            let gameTime2 = parseInt(team2.gameTime);
+        allGames.sort((game1: any, game2: any) => {
+            let gameTime1 = parseInt(game1.gameTime);
+            let gameTime2 = parseInt(game2.gameTime);
 
             if (gameTime1 < gameTime2) {
                 return -1;
