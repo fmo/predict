@@ -35,6 +35,21 @@ class UI {
 
         html += `<div class="game-date">${this.todaysDate()}</div>`
 
+        allGames.sort((team1: any, team2: any) => {
+            let gameTime1 = parseInt(team1.gameTime);
+            let gameTime2 = parseInt(team2.gameTime);
+
+            if (gameTime1 < gameTime2) {
+                return -1;
+            }
+
+            if (gameTime1 > gameTime2) {
+                return 1;
+            }
+
+            return 0;
+        });
+
         allGames.forEach(function(game: any) {
             let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
             let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
