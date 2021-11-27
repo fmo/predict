@@ -27,4 +27,3 @@ function makeGuess(e: any) {
     ui.populateGames();
 }
 
-
