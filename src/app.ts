@@ -1,7 +1,10 @@
-import { ui } from './ui';
-import { storage } from './storage';
+import { UI } from './ui';
+import { GameService } from './Services/GameService'
 import { util } from './util';
 import "../style/style.scss"
+
+const gameService = GameService.gameServiceWithLocalStorage();
+const ui = new UI();
 
 window.addEventListener('load', ui.populateGames);
 
@@ -17,11 +20,11 @@ function makeGuess(e: any) {
     }
 
     if (e.target.classList.contains('home-team')) {
-        storage.updateGames(guess, 'home-team', id);
+        gameService.predictAndPersist(guess, 'home-team', id);
     }
 
     if (e.target.classList.contains('away-team')) {
-        storage.updateGames(guess, 'away-team', id);
+        gameService.predictAndPersist(guess, 'away-team', id);
     }
 
     ui.populateGames();

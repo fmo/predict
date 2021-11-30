@@ -1,1 +1,248 @@
-(()=>{"use strict";var e,a,t,n,o,r,s,i,c,m,p,u,d,l,f,g,v,h,x,y={499:(e,a,t)=>{t.d(a,{Z:()=>i});var n=t(81),o=t.n(n),r=t(645),s=t.n(r)()(o());s.push([e.id,"@import url(https://fonts.googleapis.com/css2?family=Lato);"]),s.push([e.id,'body{font-family:"Lato",sans-serif;color:#333;line-height:1.6;font-size:16px;margin:0}a{text-decoration:none;color:#333}.navbar{background-color:#047aed;color:#fff}.navbar .container{width:90%;margin:auto;overflow:hidden}.navbar a{text-decoration:none;color:#fff}.games{margin:30px auto;max-width:56%;font-size:38px}.games .game-date{box-shadow:20px 10px 20px #add8e6;padding:30px;display:flex;margin:0 0 40px 0;color:#4682b4}.games .game-time{color:red;font-size:18px;padding:10px;margin:14px 34px 0 0}.games .game{display:flex;margin:0 0 40px 0;padding:10px;box-shadow:20px 10px 20px #a8a8a8}.games .teams-label{margin:0 0 0 30px;flex:1}.games .score{padding:0 0 10px 0}.games .home-team{flex:1}.games .away-team{flex:1}input[type=text]{font-size:24px;width:30px;padding:5px}.button{background-color:#47a3ff;color:#fff;padding:10px 15px;border:none;border-radius:10px}.button:hover{background-color:#1e83f7;color:#fff;cursor:pointer;border-radius:10px}@media(max-width: 1000px){.games{max-width:80%;align-content:center;font-size:18px}.games .game-time{margin:0px 34px 0 10px}}@media(max-width: 1200px){.games{font-size:30px}.games .game-time{margin:4px 34px 0 10px}}',""]);const i=s},645:e=>{e.exports=function(e){var a=[];return a.toString=function(){return this.map((function(a){var t="",n=void 0!==a[5];return a[4]&&(t+="@supports (".concat(a[4],") {")),a[2]&&(t+="@media ".concat(a[2]," {")),n&&(t+="@layer".concat(a[5].length>0?" ".concat(a[5]):""," {")),t+=e(a),n&&(t+="}"),a[2]&&(t+="}"),a[4]&&(t+="}"),t})).join("")},a.i=function(e,t,n,o,r){"string"==typeof e&&(e=[[null,e,void 0]]);var s={};if(n)for(var i=0;i<this.length;i++){var c=this[i][0];null!=c&&(s[c]=!0)}for(var m=0;m<e.length;m++){var p=[].concat(e[m]);n&&s[p[0]]||(void 0!==r&&(void 0===p[5]||(p[1]="@layer".concat(p[5].length>0?" ".concat(p[5]):""," {").concat(p[1],"}")),p[5]=r),t&&(p[2]?(p[1]="@media ".concat(p[2]," {").concat(p[1],"}"),p[2]=t):p[2]=t),o&&(p[4]?(p[1]="@supports (".concat(p[4],") {").concat(p[1],"}"),p[4]=o):p[4]="".concat(o)),a.push(p))}},a}},81:e=>{e.exports=function(e){return e[1]}},379:e=>{var a=[];function t(e){for(var t=-1,n=0;n<a.length;n++)if(a[n].identifier===e){t=n;break}return t}function n(e,n){for(var r={},s=[],i=0;i<e.length;i++){var c=e[i],m=n.base?c[0]+n.base:c[0],p=r[m]||0,u="".concat(m," ").concat(p);r[m]=p+1;var d=t(u),l={css:c[1],media:c[2],sourceMap:c[3],supports:c[4],layer:c[5]};if(-1!==d)a[d].references++,a[d].updater(l);else{var f=o(l,n);n.byIndex=i,a.splice(i,0,{identifier:u,updater:f,references:1})}s.push(u)}return s}function o(e,a){var t=a.domAPI(a);return t.update(e),function(a){if(a){if(a.css===e.css&&a.media===e.media&&a.sourceMap===e.sourceMap&&a.supports===e.supports&&a.layer===e.layer)return;t.update(e=a)}else t.remove()}}e.exports=function(e,o){var r=n(e=e||[],o=o||{});return function(e){e=e||[];for(var s=0;s<r.length;s++){var i=t(r[s]);a[i].references--}for(var c=n(e,o),m=0;m<r.length;m++){var p=t(r[m]);0===a[p].references&&(a[p].updater(),a.splice(p,1))}r=c}}},569:e=>{var a={};e.exports=function(e,t){var n=function(e){if(void 0===a[e]){var t=document.querySelector(e);if(window.HTMLIFrameElement&&t instanceof window.HTMLIFrameElement)try{t=t.contentDocument.head}catch(e){t=null}a[e]=t}return a[e]}(e);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.");n.appendChild(t)}},216:e=>{e.exports=function(e){var a=document.createElement("style");return e.setAttributes(a,e.attributes),e.insert(a,e.options),a}},565:(e,a,t)=>{e.exports=function(e){var a=t.nc;a&&e.setAttribute("nonce",a)}},795:e=>{e.exports=function(e){var a=e.insertStyleElement(e);return{update:function(t){!function(e,a,t){var n="";t.supports&&(n+="@supports (".concat(t.supports,") {")),t.media&&(n+="@media ".concat(t.media," {"));var o=void 0!==t.layer;o&&(n+="@layer".concat(t.layer.length>0?" ".concat(t.layer):""," {")),n+=t.css,o&&(n+="}"),t.media&&(n+="}"),t.supports&&(n+="}");var r=t.sourceMap;r&&"undefined"!=typeof btoa&&(n+="\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(r))))," */")),a.styleTagTransform(n,e,a.options)}(a,e,t)},remove:function(){!function(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e)}(a)}}}},589:e=>{e.exports=function(e,a){if(a.styleSheet)a.styleSheet.cssText=e;else{for(;a.firstChild;)a.removeChild(a.firstChild);a.appendChild(document.createTextNode(e))}}}},T={};function b(e){var a=T[e];if(void 0!==a)return a.exports;var t=T[e]={id:e,exports:{}};return y[e](t,t.exports,b),t.exports}b.n=e=>{var a=e&&e.__esModule?()=>e.default:()=>e;return b.d(a,{a}),a},b.d=(e,a)=>{for(var t in a)b.o(a,t)&&!b.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:a[t]})},b.o=(e,a)=>Object.prototype.hasOwnProperty.call(e,a),e=[{id:1,homeTeam:"Fenerbahce",awayTeam:"Tenerife",homeTeamGuess:"",awayTeamGuess:"",gameTime:"19:00"},{id:2,homeTeam:"Atletico Madrid",awayTeam:"Barcelona",homeTeamGuess:"",awayTeamGuess:"",gameTime:"18:00"},{id:3,homeTeam:"Arsenal",awayTeam:"Liverpool",homeTeamGuess:"",awayTeamGuess:"",gameTime:"12:00"},{id:4,homeTeam:"Sevilla",awayTeam:"Real Madrid",homeTeamGuess:"",awayTeamGuess:"",gameTime:"21:00"}],a=new(function(){function a(){this.populateGames=this.populateGames.bind(this)}return a.prototype.getGameId=function(e){var a=e.split("-");return parseInt(a[1])},a.prototype.todaysDate=function(){var e=new Date,a=[e.getMonth(),e.getDate(),e.getFullYear()],t=a[2],n=["Jan","Feb","March","April","May","June","July","August","Sep","Oct","November","Dec"][a[0]];return"".concat(a[1]," / ").concat(n," / ").concat(t)},a.prototype.populateGames=function(){localStorage.getItem("games")||localStorage.setItem("games",JSON.stringify(e));var a=JSON.parse(localStorage.getItem("games")),t="";t+='<div class="game-date">'.concat(this.todaysDate(),"</div>"),a.sort((function(e,a){var t=parseInt(e.gameTime),n=parseInt(a.gameTime);return t<n?-1:t>n?1:0})),a.forEach((function(e){var a=null!==e.homeTeamGuess?e.homeTeamGuess:"",n=null!==e.awayTeamGuess?e.awayTeamGuess:"";t+='\n                <div id="game-'.concat(e.id,'" class="game">\n                    <div class="teams-label">').concat(e.homeTeam," - ").concat(e.awayTeam,'</div>\n                    <div class="game-time">').concat(e.gameTime,'</div>\n                    <div class="score">\n                        <input type="text" value="').concat(a,'" class="home-team"> \n                        <span> - </span>\n                        <input type="text" value="').concat(n,'" class="away-team"> \n                    </div>\n                </div>\n            ')})),document.querySelector(".games").innerHTML=t},a}()),t=function(){return t=Object.assign||function(e){for(var a,t=1,n=arguments.length;t<n;t++)for(var o in a=arguments[t])Object.prototype.hasOwnProperty.call(a,o)&&(e[o]=a[o]);return e},t.apply(this,arguments)},n=new(function(){function e(){}return e.prototype.updateGames=function(e,a,n){var o=[];JSON.parse(localStorage.getItem("games")).forEach((function(r){r.id===n&&(r=t(t({},r),"home-team"===a?{homeTeamGuess:e}:{awayTeamGuess:e})),o.push(r)})),localStorage.setItem("games",JSON.stringify(o))},e}()),o=new(function(){function e(){}return e.prototype.validGuess=function(e){return!(!/^[0-9]{1,2}$/.test(e)||e>15||e<0)},e}()),r=b(379),s=b.n(r),i=b(795),c=b.n(i),m=b(569),p=b.n(m),u=b(565),d=b.n(u),l=b(216),f=b.n(l),g=b(589),v=b.n(g),h=b(499),(x={}).styleTagTransform=v(),x.setAttributes=d(),x.insert=p().bind(null,"head"),x.domAPI=c(),x.insertStyleElement=f(),s()(h.Z,x),h.Z&&h.Z.locals&&h.Z.locals,window.addEventListener("load",a.populateGames),document.querySelector(".games").addEventListener("focusout",(function(e){var t=a.getGameId(e.target.parentNode.parentNode.id),r=e.target.value;o.validGuess(r)?(e.target.classList.contains("home-team")&&n.updateGames(r,"home-team",t),e.target.classList.contains("away-team")&&n.updateGames(r,"away-team",t),a.populateGames()):e.target.classList.add("is-invalid")}))})();
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+/******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./style/style.scss":
+/*!*******************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./style/style.scss ***!
+  \*******************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n___CSS_LOADER_EXPORT___.push([module.id, \"@import url(https://fonts.googleapis.com/css2?family=Lato);\"]);\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"/* * {\\n    Use this section to reset all elements\\n    Add border and padding sizes to the total\\n    box-sizing: border-box;\\n} */\\n/* Main Elements */\\nbody {\\n  font-family: \\\"Lato\\\", sans-serif;\\n  color: #333;\\n  line-height: 1.6;\\n  font-size: 16px;\\n  margin: 0;\\n}\\n\\na {\\n  text-decoration: none;\\n  color: #333;\\n}\\n\\n/* Navbar */\\n.navbar {\\n  background-color: #047aed;\\n  color: #fff;\\n}\\n.navbar .container {\\n  width: 90%;\\n  margin: auto;\\n  overflow: hidden;\\n}\\n.navbar a {\\n  text-decoration: none;\\n  color: #fff;\\n}\\n\\n/* Game Section */\\n.games {\\n  margin: 30px auto;\\n  max-width: 56%;\\n  font-size: 38px;\\n}\\n.games .game-date {\\n  box-shadow: 20px 10px 20px lightblue;\\n  padding: 30px;\\n  display: flex;\\n  margin: 0 0 40px 0;\\n  color: steelblue;\\n}\\n.games .game-time {\\n  color: red;\\n  font-size: 18px;\\n  padding: 10px;\\n  margin: 14px 34px 0 0;\\n}\\n.games .game {\\n  display: flex;\\n  margin: 0 0 40px 0;\\n  padding: 10px;\\n  box-shadow: 20px 10px 20px #a8a8a8;\\n}\\n.games .teams-label {\\n  margin: 0 0 0 30px;\\n  flex: 1;\\n}\\n.games .score {\\n  padding: 0 0 10px 0;\\n}\\n.games .home-team {\\n  flex: 1;\\n}\\n.games .away-team {\\n  flex: 1;\\n}\\n\\n/* Form elements */\\ninput[type=text] {\\n  font-size: 24px;\\n  width: 30px;\\n  padding: 5px;\\n}\\n\\n.button {\\n  background-color: #47a3ff;\\n  color: #fff;\\n  padding: 10px 15px;\\n  border: none;\\n  border-radius: 10px;\\n}\\n\\n.button:hover {\\n  background-color: #1e83f7;\\n  color: #fff;\\n  cursor: pointer;\\n  border-radius: 10px;\\n}\\n\\n@media (max-width: 1000px) {\\n  .games {\\n    max-width: 80%;\\n    align-content: center;\\n    font-size: 18px;\\n  }\\n  .games .game-time {\\n    margin: 0px 34px 0 10px;\\n  }\\n}\\n@media (max-width: 1200px) {\\n  .games {\\n    font-size: 30px;\\n  }\\n  .games .game-time {\\n    margin: 4px 34px 0 10px;\\n  }\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://@fmo/predict/./style/style.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/api.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/api.js ***!
+  \*****************************************************/
+/***/ ((module) => {
+
+eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\nmodule.exports = function (cssWithMappingToString) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = \"\";\n      var needLayer = typeof item[5] !== \"undefined\";\n\n      if (item[4]) {\n        content += \"@supports (\".concat(item[4], \") {\");\n      }\n\n      if (item[2]) {\n        content += \"@media \".concat(item[2], \" {\");\n      }\n\n      if (needLayer) {\n        content += \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\");\n      }\n\n      content += cssWithMappingToString(item);\n\n      if (needLayer) {\n        content += \"}\";\n      }\n\n      if (item[2]) {\n        content += \"}\";\n      }\n\n      if (item[4]) {\n        content += \"}\";\n      }\n\n      return content;\n    }).join(\"\");\n  }; // import a list of modules into the list\n\n\n  list.i = function i(modules, media, dedupe, supports, layer) {\n    if (typeof modules === \"string\") {\n      modules = [[null, modules, undefined]];\n    }\n\n    var alreadyImportedModules = {};\n\n    if (dedupe) {\n      for (var k = 0; k < this.length; k++) {\n        var id = this[k][0];\n\n        if (id != null) {\n          alreadyImportedModules[id] = true;\n        }\n      }\n    }\n\n    for (var _k = 0; _k < modules.length; _k++) {\n      var item = [].concat(modules[_k]);\n\n      if (dedupe && alreadyImportedModules[item[0]]) {\n        continue;\n      }\n\n      if (typeof layer !== \"undefined\") {\n        if (typeof item[5] === \"undefined\") {\n          item[5] = layer;\n        } else {\n          item[1] = \"@layer\".concat(item[5].length > 0 ? \" \".concat(item[5]) : \"\", \" {\").concat(item[1], \"}\");\n          item[5] = layer;\n        }\n      }\n\n      if (media) {\n        if (!item[2]) {\n          item[2] = media;\n        } else {\n          item[1] = \"@media \".concat(item[2], \" {\").concat(item[1], \"}\");\n          item[2] = media;\n        }\n      }\n\n      if (supports) {\n        if (!item[4]) {\n          item[4] = \"\".concat(supports);\n        } else {\n          item[1] = \"@supports (\".concat(item[4], \") {\").concat(item[1], \"}\");\n          item[4] = supports;\n        }\n      }\n\n      list.push(item);\n    }\n  };\n\n  return list;\n};\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/noSourceMaps.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/noSourceMaps.js ***!
+  \**************************************************************/
+/***/ ((module) => {
+
+eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/css-loader/dist/runtime/noSourceMaps.js?");
+
+/***/ }),
+
+/***/ "./style/style.scss":
+/*!**************************!*\
+  !*** ./style/style.scss ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleDomAPI.js */ \"./node_modules/style-loader/dist/runtime/styleDomAPI.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertBySelector.js */ \"./node_modules/style-loader/dist/runtime/insertBySelector.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ \"./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/insertStyleElement.js */ \"./node_modules/style-loader/dist/runtime/insertStyleElement.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../node_modules/style-loader/dist/runtime/styleTagTransform.js */ \"./node_modules/style-loader/dist/runtime/styleTagTransform.js\");\n/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../node_modules/css-loader/dist/cjs.js!../node_modules/sass-loader/dist/cjs.js!./style.scss */ \"./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./style/style.scss\");\n\n      \n      \n      \n      \n      \n      \n      \n      \n      \n\nvar options = {};\n\noptions.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());\noptions.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());\n\n      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, \"head\");\n    \noptions.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());\noptions.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());\n\nvar update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_6__[\"default\"], options);\n\n\n\n\n       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_6__[\"default\"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_style_scss__WEBPACK_IMPORTED_MODULE_6__[\"default\"].locals : undefined);\n\n\n//# sourceURL=webpack://@fmo/predict/./style/style.scss?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+eval("\n\nvar stylesInDOM = [];\n\nfunction getIndexByIdentifier(identifier) {\n  var result = -1;\n\n  for (var i = 0; i < stylesInDOM.length; i++) {\n    if (stylesInDOM[i].identifier === identifier) {\n      result = i;\n      break;\n    }\n  }\n\n  return result;\n}\n\nfunction modulesToDom(list, options) {\n  var idCountMap = {};\n  var identifiers = [];\n\n  for (var i = 0; i < list.length; i++) {\n    var item = list[i];\n    var id = options.base ? item[0] + options.base : item[0];\n    var count = idCountMap[id] || 0;\n    var identifier = \"\".concat(id, \" \").concat(count);\n    idCountMap[id] = count + 1;\n    var indexByIdentifier = getIndexByIdentifier(identifier);\n    var obj = {\n      css: item[1],\n      media: item[2],\n      sourceMap: item[3],\n      supports: item[4],\n      layer: item[5]\n    };\n\n    if (indexByIdentifier !== -1) {\n      stylesInDOM[indexByIdentifier].references++;\n      stylesInDOM[indexByIdentifier].updater(obj);\n    } else {\n      var updater = addElementStyle(obj, options);\n      options.byIndex = i;\n      stylesInDOM.splice(i, 0, {\n        identifier: identifier,\n        updater: updater,\n        references: 1\n      });\n    }\n\n    identifiers.push(identifier);\n  }\n\n  return identifiers;\n}\n\nfunction addElementStyle(obj, options) {\n  var api = options.domAPI(options);\n  api.update(obj);\n\n  var updater = function updater(newObj) {\n    if (newObj) {\n      if (newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap && newObj.supports === obj.supports && newObj.layer === obj.layer) {\n        return;\n      }\n\n      api.update(obj = newObj);\n    } else {\n      api.remove();\n    }\n  };\n\n  return updater;\n}\n\nmodule.exports = function (list, options) {\n  options = options || {};\n  list = list || [];\n  var lastIdentifiers = modulesToDom(list, options);\n  return function update(newList) {\n    newList = newList || [];\n\n    for (var i = 0; i < lastIdentifiers.length; i++) {\n      var identifier = lastIdentifiers[i];\n      var index = getIndexByIdentifier(identifier);\n      stylesInDOM[index].references--;\n    }\n\n    var newLastIdentifiers = modulesToDom(newList, options);\n\n    for (var _i = 0; _i < lastIdentifiers.length; _i++) {\n      var _identifier = lastIdentifiers[_i];\n\n      var _index = getIndexByIdentifier(_identifier);\n\n      if (stylesInDOM[_index].references === 0) {\n        stylesInDOM[_index].updater();\n\n        stylesInDOM.splice(_index, 1);\n      }\n    }\n\n    lastIdentifiers = newLastIdentifiers;\n  };\n};\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertBySelector.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertBySelector.js ***!
+  \********************************************************************/
+/***/ ((module) => {
+
+eval("\n\nvar memo = {};\n/* istanbul ignore next  */\n\nfunction getTarget(target) {\n  if (typeof memo[target] === \"undefined\") {\n    var styleTarget = document.querySelector(target); // Special case to return head of iframe instead of iframe itself\n\n    if (window.HTMLIFrameElement && styleTarget instanceof window.HTMLIFrameElement) {\n      try {\n        // This will throw an exception if access to iframe is blocked\n        // due to cross-origin restrictions\n        styleTarget = styleTarget.contentDocument.head;\n      } catch (e) {\n        // istanbul ignore next\n        styleTarget = null;\n      }\n    }\n\n    memo[target] = styleTarget;\n  }\n\n  return memo[target];\n}\n/* istanbul ignore next  */\n\n\nfunction insertBySelector(insert, style) {\n  var target = getTarget(insert);\n\n  if (!target) {\n    throw new Error(\"Couldn't find a style target. This probably means that the value for the 'insert' parameter is invalid.\");\n  }\n\n  target.appendChild(style);\n}\n\nmodule.exports = insertBySelector;\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/style-loader/dist/runtime/insertBySelector.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/insertStyleElement.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/insertStyleElement.js ***!
+  \**********************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction insertStyleElement(options) {\n  var element = document.createElement(\"style\");\n  options.setAttributes(element, options.attributes);\n  options.insert(element, options.options);\n  return element;\n}\n\nmodule.exports = insertStyleElement;\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/style-loader/dist/runtime/insertStyleElement.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js ***!
+  \**********************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction setAttributesWithoutAttributes(styleElement) {\n  var nonce =  true ? __webpack_require__.nc : 0;\n\n  if (nonce) {\n    styleElement.setAttribute(\"nonce\", nonce);\n  }\n}\n\nmodule.exports = setAttributesWithoutAttributes;\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleDomAPI.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleDomAPI.js ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj) {\n  var css = \"\";\n\n  if (obj.supports) {\n    css += \"@supports (\".concat(obj.supports, \") {\");\n  }\n\n  if (obj.media) {\n    css += \"@media \".concat(obj.media, \" {\");\n  }\n\n  var needLayer = typeof obj.layer !== \"undefined\";\n\n  if (needLayer) {\n    css += \"@layer\".concat(obj.layer.length > 0 ? \" \".concat(obj.layer) : \"\", \" {\");\n  }\n\n  css += obj.css;\n\n  if (needLayer) {\n    css += \"}\";\n  }\n\n  if (obj.media) {\n    css += \"}\";\n  }\n\n  if (obj.supports) {\n    css += \"}\";\n  }\n\n  var sourceMap = obj.sourceMap;\n\n  if (sourceMap && typeof btoa !== \"undefined\") {\n    css += \"\\n/*# sourceMappingURL=data:application/json;base64,\".concat(btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))), \" */\");\n  } // For old IE\n\n  /* istanbul ignore if  */\n\n\n  options.styleTagTransform(css, styleElement, options.options);\n}\n\nfunction removeStyleElement(styleElement) {\n  // istanbul ignore if\n  if (styleElement.parentNode === null) {\n    return false;\n  }\n\n  styleElement.parentNode.removeChild(styleElement);\n}\n/* istanbul ignore next  */\n\n\nfunction domAPI(options) {\n  var styleElement = options.insertStyleElement(options);\n  return {\n    update: function update(obj) {\n      apply(styleElement, options, obj);\n    },\n    remove: function remove() {\n      removeStyleElement(styleElement);\n    }\n  };\n}\n\nmodule.exports = domAPI;\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/style-loader/dist/runtime/styleDomAPI.js?");
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/runtime/styleTagTransform.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/style-loader/dist/runtime/styleTagTransform.js ***!
+  \*********************************************************************/
+/***/ ((module) => {
+
+eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\n\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://@fmo/predict/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
+
+/***/ }),
+
+/***/ "./src/Services/GameService.ts":
+/*!*************************************!*\
+  !*** ./src/Services/GameService.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"GameService\": () => (/* binding */ GameService)\n/* harmony export */ });\n/* harmony import */ var _Storage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Storage */ \"./src/Storage.ts\");\nvar __assign = (undefined && undefined.__assign) || function () {\n    __assign = Object.assign || function(t) {\n        for (var s, i = 1, n = arguments.length; i < n; i++) {\n            s = arguments[i];\n            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))\n                t[p] = s[p];\n        }\n        return t;\n    };\n    return __assign.apply(this, arguments);\n};\n\nvar GameService = /** @class */ (function () {\n    function GameService(storage) {\n        this.storage = storage;\n    }\n    GameService.gameServiceWithLocalStorage = function () {\n        return new GameService(new _Storage__WEBPACK_IMPORTED_MODULE_0__.Storage);\n    };\n    GameService.prototype.getAllGames = function () {\n        return this.storage.getAllGames();\n    };\n    GameService.prototype.findOneGameById = function (id) {\n        var foundGame;\n        this.getAllGames().forEach(function (game) {\n            if (game.id === id) {\n                foundGame = game;\n            }\n        });\n        return foundGame;\n    };\n    GameService.prototype.update = function (updateGame) {\n        var updatedGameList = [];\n        this.getAllGames().forEach(function (game) {\n            if (game.id === updateGame.id) {\n                updatedGameList.push(updateGame);\n            }\n            else {\n                updatedGameList.push(game);\n            }\n        });\n        return updatedGameList;\n    };\n    GameService.prototype.predict = function (guess, whichTeam, id) {\n        var game = this.findOneGameById(id);\n        if (!game) {\n            return;\n        }\n        if (whichTeam === 'home-team') {\n            game = __assign(__assign({}, game), { \"homeTeamGuess\": guess });\n        }\n        else {\n            game = __assign(__assign({}, game), { \"awayTeamGuess\": guess });\n        }\n        return game;\n    };\n    GameService.prototype.persist = function (games) {\n        this.storage.updateAllGames(games);\n    };\n    GameService.prototype.predictAndPersist = function (guess, whichTeam, id) {\n        var game = this.predict(guess, whichTeam, id);\n        var games = this.update(game);\n        this.persist(games);\n    };\n    return GameService;\n}());\n\n\n\n//# sourceURL=webpack://@fmo/predict/./src/Services/GameService.ts?");
+
+/***/ }),
+
+/***/ "./src/Storage.ts":
+/*!************************!*\
+  !*** ./src/Storage.ts ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Storage\": () => (/* binding */ Storage)\n/* harmony export */ });\n/* harmony import */ var _data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./data */ \"./src/data.ts\");\n\nvar Storage = /** @class */ (function () {\n    function Storage() {\n    }\n    Storage.prototype.getAllGames = function () {\n        this.init();\n        return JSON.parse(localStorage.getItem('games'));\n    };\n    Storage.prototype.updateAllGames = function (games) {\n        localStorage.setItem('games', JSON.stringify(games));\n    };\n    Storage.prototype.init = function () {\n        if (!localStorage.getItem('games')) {\n            localStorage.setItem('games', JSON.stringify(_data__WEBPACK_IMPORTED_MODULE_0__.games));\n        }\n    };\n    return Storage;\n}());\n\n\n\n//# sourceURL=webpack://@fmo/predict/./src/Storage.ts?");
+
+/***/ }),
+
+/***/ "./src/app.ts":
+/*!********************!*\
+  !*** ./src/app.ts ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ui */ \"./src/ui.ts\");\n/* harmony import */ var _Services_GameService__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Services/GameService */ \"./src/Services/GameService.ts\");\n/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./util */ \"./src/util.ts\");\n/* harmony import */ var _style_style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../style/style.scss */ \"./style/style.scss\");\n\n\n\n\nvar gameService = _Services_GameService__WEBPACK_IMPORTED_MODULE_1__.GameService.gameServiceWithLocalStorage();\nvar ui = new _ui__WEBPACK_IMPORTED_MODULE_0__.UI();\nwindow.addEventListener('load', ui.populateGames);\ndocument.querySelector('.games').addEventListener('focusout', makeGuess);\nfunction makeGuess(e) {\n    var id = ui.getGameId(e.target.parentNode.parentNode.id);\n    var guess = e.target.value;\n    if (!_util__WEBPACK_IMPORTED_MODULE_2__.util.validGuess(guess)) {\n        e.target.classList.add('is-invalid');\n        return;\n    }\n    if (e.target.classList.contains('home-team')) {\n        gameService.predictAndPersist(guess, 'home-team', id);\n    }\n    if (e.target.classList.contains('away-team')) {\n        gameService.predictAndPersist(guess, 'away-team', id);\n    }\n    ui.populateGames();\n}\n\n\n//# sourceURL=webpack://@fmo/predict/./src/app.ts?");
+
+/***/ }),
+
+/***/ "./src/data.ts":
+/*!*********************!*\
+  !*** ./src/data.ts ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"games\": () => (/* binding */ games)\n/* harmony export */ });\nvar games = [\n    {\n        \"id\": 1,\n        \"homeTeam\": \"Fenerbahce\",\n        \"awayTeam\": \"Tenerife\",\n        \"homeTeamGuess\": \"\",\n        \"awayTeamGuess\": \"\",\n        \"gameTime\": \"19:00\"\n    },\n    {\n        \"id\": 2,\n        \"homeTeam\": \"Atletico Madrid\",\n        \"awayTeam\": \"Barcelona\",\n        \"homeTeamGuess\": \"\",\n        \"awayTeamGuess\": \"\",\n        \"gameTime\": \"18:00\"\n    },\n    {\n        \"id\": 3,\n        \"homeTeam\": \"Arsenal\",\n        \"awayTeam\": \"Liverpool\",\n        \"homeTeamGuess\": \"\",\n        \"awayTeamGuess\": \"\",\n        \"gameTime\": \"12:00\"\n    },\n    {\n        \"id\": 4,\n        \"homeTeam\": \"Sevilla\",\n        \"awayTeam\": \"Real Madrid\",\n        \"homeTeamGuess\": \"\",\n        \"awayTeamGuess\": \"\",\n        \"gameTime\": \"21:00\"\n    },\n];\n\n\n//# sourceURL=webpack://@fmo/predict/./src/data.ts?");
+
+/***/ }),
+
+/***/ "./src/ui.ts":
+/*!*******************!*\
+  !*** ./src/ui.ts ***!
+  \*******************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"UI\": () => (/* binding */ UI)\n/* harmony export */ });\n/* harmony import */ var _Services_GameService__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Services/GameService */ \"./src/Services/GameService.ts\");\n/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ \"./src/util.ts\");\n\n\nvar UI = /** @class */ (function () {\n    function UI() {\n        this.populateGames = this.populateGames.bind(this);\n        this.gameService = _Services_GameService__WEBPACK_IMPORTED_MODULE_0__.GameService.gameServiceWithLocalStorage();\n    }\n    UI.prototype.getGameId = function (gameId) {\n        var gameIdArr = gameId.split('-');\n        return parseInt(gameIdArr[1]);\n    };\n    UI.prototype.populateGames = function () {\n        var allGames = this.gameService.getAllGames();\n        var html = '';\n        html += \"<div class=\\\"game-date\\\">\".concat(_util__WEBPACK_IMPORTED_MODULE_1__.util.todaysDate(), \"</div>\");\n        allGames.sort(function (game1, game2) {\n            var gameTime1 = parseInt(game1.gameTime);\n            var gameTime2 = parseInt(game2.gameTime);\n            if (gameTime1 < gameTime2) {\n                return -1;\n            }\n            if (gameTime1 > gameTime2) {\n                return 1;\n            }\n            return 0;\n        });\n        allGames.forEach(function (game) {\n            var homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';\n            var awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';\n            html += \"\\n                <div id=\\\"game-\".concat(game.id, \"\\\" class=\\\"game\\\">\\n                    <div class=\\\"teams-label\\\">\").concat(game.homeTeam, \" - \").concat(game.awayTeam, \"</div>\\n                    <div class=\\\"game-time\\\">\").concat(game.gameTime, \"</div>\\n                    <div class=\\\"score\\\">\\n                        <input type=\\\"text\\\" value=\\\"\").concat(homeTeamVal, \"\\\" class=\\\"home-team\\\"> \\n                        <span> - </span>\\n                        <input type=\\\"text\\\" value=\\\"\").concat(awayTeamVal, \"\\\" class=\\\"away-team\\\"> \\n                    </div>\\n                </div>\\n            \");\n        });\n        document.querySelector('.games').innerHTML = html;\n    };\n    return UI;\n}());\n\n\n\n//# sourceURL=webpack://@fmo/predict/./src/ui.ts?");
+
+/***/ }),
+
+/***/ "./src/util.ts":
+/*!*********************!*\
+  !*** ./src/util.ts ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"util\": () => (/* binding */ util)\n/* harmony export */ });\nvar Util = /** @class */ (function () {\n    function Util() {\n    }\n    Util.prototype.validGuess = function (guess) {\n        var re = /^[0-9]{1,2}$/;\n        if (!re.test(guess) || guess > 15) {\n            return false;\n        }\n        if (guess < 0) {\n            return false;\n        }\n        return true;\n    };\n    Util.prototype.todaysDate = function () {\n        var date = new Date();\n        var _a = [date.getMonth(), date.getDate(), date.getFullYear()], month = _a[0], day = _a[1], year = _a[2];\n        var months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sep', 'Oct', 'November', 'Dec'];\n        var monthsInString = months[month];\n        var fullDate = \"\".concat(day, \" / \").concat(monthsInString, \" / \").concat(year);\n        return fullDate;\n    };\n    return Util;\n}());\nvar util = new Util();\n\n\n//# sourceURL=webpack://@fmo/predict/./src/util.ts?");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			id: moduleId,
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app.ts");
+/******/ 	
+/******/ })()
+;

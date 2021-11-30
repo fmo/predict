@@ -1,33 +1,20 @@
-import { Game } from './games';
+import { games } from './data'
+import { Game } from './Game';
 
-class Storage {
+export class Storage {
 
-    updateGames(guess: number, whichTeam: string, id: number): void {
-        
-        let guessedGames: any = [];
-        
-        let allGames = JSON.parse(localStorage.getItem('games'));
+    getAllGames(): [] {
+        this.init();
+        return JSON.parse(localStorage.getItem('games'));
+    }
 
-        allGames.forEach((game: Game) => {
-            if (game.id === id) {
-                if (whichTeam === 'home-team') {
-                    game = { 
-                        ...game, 
-                        "homeTeamGuess": guess, 
-                    }
-                } else {
-                    game = { 
-                        ...game, 
-                        "awayTeamGuess": guess, 
-                    }
-                }
-            }
-            
-            guessedGames.push(game);
-        });
-    
-        localStorage.setItem('games', JSON.stringify(guessedGames));
+    updateAllGames(games: Game []) {
+        localStorage.setItem('games', JSON.stringify(games));
+    }
+
+    init(): void {
+        if (!localStorage.getItem('games')) {
+            localStorage.setItem('games', JSON.stringify(games))
+        }
     }
 }
-
-export const storage = new Storage();

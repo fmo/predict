@@ -13,6 +13,17 @@ class Util {
 
     return true;
   }
+
+  todaysDate() {
+    const date = new Date();
+    const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+    const months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sep', 'Oct', 'November', 'Dec'];
+    const monthsInString = months[month];
+
+    const fullDate = `${day} / ${monthsInString} / ${year}`;
+
+    return fullDate;
+}
 }
 
 export const util = new Util();

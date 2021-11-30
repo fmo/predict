@@ -1,9 +1,13 @@
-import { games, Game } from './games'
+import { Game } from './Game';
+import { GameService } from './Services/GameService';
+import { util } from './util';
 
-class UI {
+export class UI {
+    gameService: GameService;
 
     constructor() {
         this.populateGames = this.populateGames.bind(this);
+        this.gameService = GameService.gameServiceWithLocalStorage();
     }
 
     getGameId(gameId: string): number {
@@ -12,28 +16,12 @@ class UI {
         return parseInt(gameIdArr[1]);
     }
 
-    todaysDate() {
-        const date = new Date();
-        const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
-        const months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'August', 'Sep', 'Oct', 'November', 'Dec'];
-        const monthsInString = months[month];
-
-        const fullDate = `${day} / ${monthsInString} / ${year}`;
-
-        return fullDate;
-    }
-    
-
     populateGames() {
-        if (!localStorage.getItem('games')) {
-            localStorage.setItem('games', JSON.stringify(games))
-        }
-
-        let allGames = JSON.parse(localStorage.getItem('games'));
+        let allGames = this.gameService.getAllGames();
 
         let html = '';
 
-        html += `<div class="game-date">${this.todaysDate()}</div>`
+        html += `<div class="game-date">${util.todaysDate()}</div>`
 
         allGames.sort((game1: any, game2: any) => {
             let gameTime1 = parseInt(game1.gameTime);
@@ -70,5 +58,3 @@ class UI {
         document.querySelector('.games').innerHTML = html;
     }
 }
-
-export const ui = new UI();
