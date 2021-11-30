@@ -3,20 +3,28 @@ import { Storage } from "../Storage"
 
 export class GameService {
 
-    constructor(public storage: Storage) {}
+    private data: Game[]
+
+    constructor(
+        public storage: Storage
+    ) {
+        if (!this.data) {
+            this.data = this.getAllGames();
+        }
+    }
 
     static gameServiceWithLocalStorage(): GameService {
         return new GameService(
           new Storage
         );
-      }
+    }
 
     getAllGames() {
         return this.storage.getAllGames();
     }
 
-    findOneGameById(id: number): Game|void {
-        let foundGame: Game|void;
+    findOneGameById(id: number): Game {
+        let foundGame: Game;
 
         this.getAllGames().forEach((game: Game) => {
             if (game.id === id) {
@@ -27,50 +35,44 @@ export class GameService {
         return foundGame;
     }
 
-    update(updateGame: Game): Game [] {
-        let updatedGameList: Game [] = [];
+    predict(guess: number, whichTeam: string, id: number) {
+        let updateGame: Game = this.findOneGameById(id);
 
-        this.getAllGames().forEach((game: Game) => {
-            if (game.id === updateGame.id) {
-                updatedGameList.push(updateGame);
-            } else {
-                updatedGameList.push(game);
-            }
-        });
-
-        return updatedGameList;
-    }
-
-    predict(guess: number, whichTeam: string, id: number): Game {
-        let game = this.findOneGameById(id);
-
-        if (!game) {
+        if (!updateGame) {
             return;
         }
 
-        if (whichTeam === 'home-team') {
-            game = { 
-                ...game, 
-                "homeTeamGuess": guess, 
+        let newGameList: Game[] = [];
+
+        this.data.forEach((game: Game) => {
+            if (game.id === updateGame.id) {
+                if (whichTeam === 'home-team') {
+                    game = { 
+                        ...game, 
+                        "homeTeamGuess": guess, 
+                    }
+                } else {
+                    game = { 
+                        ...game, 
+                        "awayTeamGuess": guess, 
+                    }
+                }
+                
             }
-        } else {
-            game = { 
-                ...game, 
-                "awayTeamGuess": guess, 
-            }
-        }
-    
-        return game;
+
+            newGameList.push(game);
+        });
+
+        Object.assign(this.data, newGameList);
     }
 
-    persist(games: Game []) {
-        this.storage.updateAllGames(games);
+    persist() {
+        this.storage.updateAllGames(this.data);
     }
 
     predictAndPersist(guess: number, whichTeam: string, id: number) {
-        let game = this.predict(guess, whichTeam, id);
-        let games = this.update(game);
+        this.predict(guess, whichTeam, id);
 
-        this.persist(games);
+        this.persist();
     }
 }

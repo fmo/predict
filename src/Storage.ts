@@ -8,7 +8,7 @@ export class Storage {
         return JSON.parse(localStorage.getItem('games'));
     }
 
-    updateAllGames(games: Game []) {
+    updateAllGames(games: Game[]) {
         localStorage.setItem('games', JSON.stringify(games));
     }
 
