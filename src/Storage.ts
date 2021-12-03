@@ -3,7 +3,7 @@ import { Game } from './Game';
 
 export class Storage {
 
-    getAllGames(): [] {
+    getAllGames(): Game[] {
         this.init();
         return JSON.parse(localStorage.getItem('games'));
     }

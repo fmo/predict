@@ -17,7 +17,7 @@ export class UI {
     }
 
     populateGames() {
-        let allGames = this.gameService.getAllGames();
+        let allGames = this.gameService.getAllGames;
 
         let html = '';
 

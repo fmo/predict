@@ -9,7 +9,7 @@ export class GameService {
         public storage: Storage
     ) {
         if (!this.data) {
-            this.data = this.getAllGames();
+            this.data = this.getAllGames;
         }
     }
 
@@ -19,14 +19,14 @@ export class GameService {
         );
     }
 
-    getAllGames() {
+    get getAllGames() {
         return this.storage.getAllGames();
     }
 
     findOneGameById(id: number): Game {
         let foundGame: Game;
 
-        this.getAllGames().forEach((game: Game) => {
+        this.getAllGames.forEach((game: Game) => {
             if (game.id === id) {
                 foundGame = game;
             }
