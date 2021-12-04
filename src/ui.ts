@@ -1,4 +1,4 @@
-import { Game } from './Game';
+import { GameProps } from './Game';
 import { GameService } from './Services/GameService';
 import { util } from './util';
 
@@ -38,7 +38,7 @@ export class UI {
             return 0;
         });
 
-        allGames.forEach(function(game: Game) {
+        allGames.forEach(function(game: GameProps) {
             let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
             let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
 

@@ -1,14 +1,14 @@
 import { games } from './data'
-import { Game } from './Game';
+import { GameProps } from './Game';
 
 export class Storage {
 
-    getAllGames(): Game[] {
+    getAllGames(): GameProps[] {
         this.init();
         return JSON.parse(localStorage.getItem('games'));
     }
 
-    updateAllGames(games: Game[]) {
+    updateAllGames(games: GameProps[]) {
         localStorage.setItem('games', JSON.stringify(games));
     }
 

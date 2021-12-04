@@ -1,9 +1,9 @@
-import { Game } from "../Game";
+import { Game, GameProps } from "../Game";
 import { Storage } from "../Storage"
 
 export class GameService {
 
-    private data: Game[]
+    private data: GameProps[]
 
     constructor(
         public storage: Storage
@@ -23,10 +23,10 @@ export class GameService {
         return this.storage.getAllGames();
     }
 
-    findOneGameById(id: number): Game {
-        let foundGame: Game;
+    findOneGameById(id: number): GameProps {
+        let foundGame: GameProps;
 
-        this.getAllGames.forEach((game: Game) => {
+        this.getAllGames.forEach((game: GameProps) => {
             if (game.id === id) {
                 foundGame = game;
             }
@@ -36,15 +36,15 @@ export class GameService {
     }
 
     predict(guess: number, whichTeam: string, id: number) {
-        let updateGame: Game = this.findOneGameById(id);
+        let updateGame: GameProps = this.findOneGameById(id);
 
         if (!updateGame) {
             return;
         }
 
-        let newGameList: Game[] = [];
+        let newGameList: GameProps[] = [];
 
-        this.data.forEach((game: Game) => {
+        this.data.forEach((game: GameProps) => {
             if (game.id === updateGame.id) {
                 if (whichTeam === 'home-team') {
                     game = { 
