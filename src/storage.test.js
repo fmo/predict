@@ -1,5 +1,6 @@
-import { storage } from './storage'
+import { Storage } from './Storage'
 
 test('Check add game is there', () => {
-    expect(storage.addGame).toBeDefined();
+    const storage = new Storage;
+    expect(storage.getAllGames()).toBeDefined();
 });
