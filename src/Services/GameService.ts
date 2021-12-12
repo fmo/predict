@@ -4,17 +4,13 @@ import { Storage } from "../Storage"
 export class GameService {
 
     private data: GameProps[]
-    public storage;
 
-    // constructor(
-    //     public storage: Storage
-    // ) {
-    //     if (!this.data) {
-    //         this.data = this.getAllGames;
-    //     }
-    // }
-    constructor() {
-        this.storage = new Storage();
+    constructor(
+        public storage: Storage
+    ) {
+        if (!this.data) {
+            this.data = this.getAllGames;
+        }
     }
 
     static gameServiceWithLocalStorage(): GameService {
