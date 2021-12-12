@@ -3,6 +3,10 @@ import { GameProps } from './Game';
 
 export class Storage {
 
+    constructor() {
+        
+    }
+
     getAllGames(): GameProps[] {
         this.init();
         return JSON.parse(localStorage.getItem('games'));
