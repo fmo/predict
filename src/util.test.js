@@ -1,5 +1,5 @@
 import { util } from './util';
 
-test('Test Valid Guess', () => {
+test('should test valid guess', () => {
   expect(util.validGuess('ab')).toEqual(false);
 });
