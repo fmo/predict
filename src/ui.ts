@@ -62,5 +62,28 @@ export class UI {
 
     init() {
         window.addEventListener("load", this.populateGames);
+        document
+            .querySelector(".games")
+            .addEventListener("focusout", (e: any) => {
+                const id: number = this.getGameId(
+                    e.target.parentNode.parentNode.id
+                );
+                const guess = e.target.value;
+
+                if (!util.validGuess(guess)) {
+                    e.target.classList.add("is-invalid");
+                    return;
+                }
+
+                if (e.target.classList.contains("home-team")) {
+                    this.gameService.predictAndPersist(guess, "home-team", id);
+                }
+
+                if (e.target.classList.contains("away-team")) {
+                    this.gameService.predictAndPersist(guess, "away-team", id);
+                }
+
+                this.populateGames();
+            });
     }
 }
