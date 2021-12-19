@@ -1,6 +1,6 @@
-import { GameProps } from './Game';
-import { GameService } from './Services/GameService';
-import { util } from './util';
+import { GameProps } from "./Game";
+import { GameService } from "./Services/GameService";
+import { util } from "./util";
 
 export class UI {
     gameService: GameService;
@@ -11,17 +11,17 @@ export class UI {
     }
 
     getGameId(gameId: string): number {
-        const gameIdArr = gameId.split('-');
-        
+        const gameIdArr = gameId.split("-");
+
         return parseInt(gameIdArr[1]);
     }
 
     populateGames() {
         let allGames = this.gameService.getAllGames;
 
-        let html = '';
+        let html = "";
 
-        html += `<div class="game-date">${util.todaysDate()}</div>`
+        html += `<div class="game-date">${util.todaysDate()}</div>`;
 
         allGames.sort((game1: any, game2: any) => {
             let gameTime1 = parseInt(game1.gameTime);
@@ -38,9 +38,11 @@ export class UI {
             return 0;
         });
 
-        allGames.forEach(function(game: GameProps) {
-            let homeTeamVal = (game.homeTeamGuess !== null) ? game.homeTeamGuess : '';
-            let awayTeamVal = (game.awayTeamGuess !== null) ? game.awayTeamGuess : '';
+        allGames.forEach(function (game: GameProps) {
+            let homeTeamVal =
+                game.homeTeamGuess !== null ? game.homeTeamGuess : "";
+            let awayTeamVal =
+                game.awayTeamGuess !== null ? game.awayTeamGuess : "";
 
             html += `
                 <div id="game-${game.id}" class="game">
@@ -55,6 +57,10 @@ export class UI {
             `;
         });
 
-        document.querySelector('.games').innerHTML = html;
+        document.querySelector(".games").innerHTML = html;
+    }
+
+    init() {
+        window.addEventListener("load", this.populateGames);
     }
 }
