@@ -1,22 +1,17 @@
 import { Game, GameProps } from "../Game";
-import { Storage } from "../Storage"
+import { Storage } from "../Storage";
 
 export class GameService {
+    private data: GameProps[];
 
-    private data: GameProps[]
-
-    constructor(
-        public storage: Storage
-    ) {
+    constructor(public storage: Storage) {
         if (!this.data) {
             this.data = this.getAllGames;
         }
     }
 
     static gameServiceWithLocalStorage(): GameService {
-        return new GameService(
-          new Storage
-        );
+        return new GameService(new Storage());
     }
 
     get getAllGames() {
@@ -46,18 +41,17 @@ export class GameService {
 
         this.data.forEach((game: GameProps) => {
             if (game.id === updateGame.id) {
-                if (whichTeam === 'home-team') {
-                    game = { 
-                        ...game, 
-                        "homeTeamGuess": guess, 
-                    }
+                if (whichTeam === "home-team") {
+                    game = {
+                        ...game,
+                        homeTeamGuess: guess,
+                    };
                 } else {
-                    game = { 
-                        ...game, 
-                        "awayTeamGuess": guess, 
-                    }
+                    game = {
+                        ...game,
+                        awayTeamGuess: guess,
+                    };
                 }
-                
             }
 
             newGameList.push(game);
