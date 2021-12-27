@@ -1,10 +1,26 @@
-import { UI } from "./ui";
+import { UI } from './ui';
 
-jest.mock('./Services/GameService');
+const ui = new UI();
+
+beforeEach(() => {
+    localStorage.clear();
+
+    jest.clearAllMocks();
+
+    localStorage.setItem.mockClear();
+});
 
 test('should get game id', () => {
-    const gameService = require('./Services/GameService');
-    const ui = new UI;
-
     expect(ui.getGameId('id-5')).toBe(5);
+});
+
+test('should populate games', () => {
+    document.body.innerHTML = `<section>
+        <div class="games"></div>
+    </section>`;
+
+    ui.populateGames();
+
+    expect(localStorage.getItem).toHaveBeenCalled();
+    expect(localStorage.setItem).toHaveBeenCalled();
 });
