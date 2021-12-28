@@ -1,6 +1,7 @@
-import { GameProps } from "./Game";
-import { GameService } from "./Services/GameService";
-import { util } from "./util";
+import { games } from './data';
+import { GameProps } from './Game';
+import { GameService } from './Services/GameService';
+import { util } from './util';
 
 export class UI {
     gameService: GameService;
@@ -11,7 +12,7 @@ export class UI {
     }
 
     getGameId(gameId: string): number {
-        const gameIdArr = gameId.split("-");
+        const gameIdArr = gameId.split('-');
 
         return parseInt(gameIdArr[1]);
     }
@@ -19,7 +20,7 @@ export class UI {
     populateGames() {
         let allGames = this.gameService.getAllGames;
 
-        let html = "";
+        let html = '';
 
         html += `<div class="game-date">${util.todaysDate()}</div>`;
 
@@ -39,10 +40,11 @@ export class UI {
         });
 
         allGames.forEach(function (game: GameProps) {
+            console.log(game);
             let homeTeamVal =
-                game.homeTeamGuess !== null ? game.homeTeamGuess : "";
+                game.homeTeamGuess !== null ? game.homeTeamGuess : '';
             let awayTeamVal =
-                game.awayTeamGuess !== null ? game.awayTeamGuess : "";
+                game.awayTeamGuess !== null ? game.awayTeamGuess : '';
 
             html += `
                 <div id="game-${game.id}" class="game">
@@ -57,30 +59,30 @@ export class UI {
             `;
         });
 
-        document.querySelector(".games").innerHTML = html;
+        document.querySelector('.games').innerHTML = html;
     }
 
     init() {
-        window.addEventListener("load", this.populateGames);
+        window.addEventListener('load', this.populateGames);
         document
-            .querySelector(".games")
-            .addEventListener("focusout", (e: any) => {
+            .querySelector('.games')
+            .addEventListener('focusout', (e: any) => {
                 const id: number = this.getGameId(
                     e.target.parentNode.parentNode.id
                 );
                 const guess = e.target.value;
 
                 if (!util.validGuess(guess)) {
-                    e.target.classList.add("is-invalid");
+                    e.target.classList.add('is-invalid');
                     return;
                 }
 
-                if (e.target.classList.contains("home-team")) {
-                    this.gameService.predictAndPersist(guess, "home-team", id);
+                if (e.target.classList.contains('home-team')) {
+                    this.gameService.predictAndPersist(guess, 'home-team', id);
                 }
 
-                if (e.target.classList.contains("away-team")) {
-                    this.gameService.predictAndPersist(guess, "away-team", id);
+                if (e.target.classList.contains('away-team')) {
+                    this.gameService.predictAndPersist(guess, 'away-team', id);
                 }
 
                 this.populateGames();
