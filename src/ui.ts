@@ -16,71 +16,87 @@ export class UI {
         return parseInt(gameIdArr[1]);
     }
 
-    populateGames() {
-        let allGames = this.gameService.getAllGames;
+    createDivWithText(className: string, text: string) {
+        const divElement = document.createElement('div');
+        divElement.className = className;
 
-        let dateDiv = document.createElement('div');
-        dateDiv.className = 'game-date';
+        divElement.appendChild(document.createTextNode(text));
 
-        let dateText = document.createTextNode(util.todaysDate());
+        return divElement;
+    }
 
-        dateDiv.appendChild(dateText);
+    createTeamInput(guess: string, team: string) {
+        let homeTeamInput = document.createElement('input');
+        homeTeamInput.type = 'text';
+        homeTeamInput.value = guess;
+        homeTeamInput.className = team;
 
-        let parentGamesDiv = document.querySelector('.games');
+        return homeTeamInput;
+    }
+
+    createDateElement() {
+        const parentGamesDiv = document.querySelector('.games');
         parentGamesDiv.innerHTML = '';
+        const dateDiv = this.createDivWithText('game-date', util.todaysDate());
         parentGamesDiv.insertAdjacentElement('afterbegin', dateDiv);
+    }
 
-        allGames.forEach(function (game: GameProps) {
-            let newGameDiv = document.createElement('div');
-            newGameDiv.id = `game-${game.id}`;
-            newGameDiv.className = 'game';
+    createScoreDiv(homeTeamGuess: string, awayTeamGuess: string) {
+        let scoreDiv = document.createElement('div');
+        scoreDiv.className = 'score';
 
-            let teamsLabelDiv = document.createElement('div');
-            teamsLabelDiv.className = 'teams-label';
+        const homeTeamInput = this.createTeamInput(homeTeamGuess, 'home-team');
+        scoreDiv.appendChild(homeTeamInput);
 
-            let teamsLabelText = document.createTextNode(
-                `${game.homeTeam} - ${game.awayTeam}`
-            );
+        let spanElement = document.createElement('span');
+        let spanText = document.createTextNode(' - ');
+        spanElement.appendChild(spanText);
 
-            teamsLabelDiv.appendChild(teamsLabelText);
+        scoreDiv.appendChild(spanElement);
 
-            newGameDiv.appendChild(teamsLabelDiv);
+        const awayTeamInput = this.createTeamInput(awayTeamGuess, 'away-team');
+        scoreDiv.appendChild(awayTeamInput);
 
-            let gameTimeDiv = document.createElement('div');
-            gameTimeDiv.className = 'game-time';
+        return scoreDiv;
+    }
 
-            let gameTimeText = document.createTextNode(game.gameTime);
+    createNewGame(game: GameProps) {
+        let newGameDiv = document.createElement('div');
+        newGameDiv.id = `game-${game.id}`;
+        newGameDiv.className = 'game';
 
-            gameTimeDiv.appendChild(gameTimeText);
+        const teamsLabel = this.createDivWithText(
+            'teams-label',
+            `${game.homeTeam} - ${game.awayTeam}`
+        );
 
-            newGameDiv.appendChild(gameTimeDiv);
+        const gameTime = this.createDivWithText('game-time', game.gameTime);
 
-            let scoreDiv = document.createElement('div');
-            scoreDiv.className = 'score';
+        const scoreDiv = this.createScoreDiv(
+            `${game.homeTeamGuess}`,
+            `${game.awayTeamGuess}`
+        );
 
-            let homeTeamInput = document.createElement('input');
-            homeTeamInput.type = 'text';
-            homeTeamInput.value = `${game.homeTeamGuess}`;
-            homeTeamInput.className = 'home-team';
+        newGameDiv.appendChild(teamsLabel);
+        newGameDiv.appendChild(gameTime);
+        newGameDiv.appendChild(scoreDiv);
 
-            scoreDiv.appendChild(homeTeamInput);
+        return newGameDiv;
+    }
 
-            let spanElement = document.createElement('span');
-            let spanText = document.createTextNode(' - ');
-            spanElement.appendChild(spanText);
+    generateGames(newGame: any) {
+        const parentGamesDiv = document.querySelector('.games');
+        parentGamesDiv.insertAdjacentElement('beforeend', newGame);
+    }
 
-            scoreDiv.appendChild(spanElement);
+    populateGames() {
+        const allGames = this.gameService.getAllGames;
 
-            let awayTeamInput = document.createElement('input');
-            awayTeamInput.type = 'text';
-            awayTeamInput.value = `${game.awayTeamGuess}`;
-            awayTeamInput.className = 'away-team';
+        this.createDateElement();
 
-            scoreDiv.appendChild(awayTeamInput);
-
-            newGameDiv.appendChild(scoreDiv);
-
-            parentGamesDiv.insertAdjacentElement('beforeend', newGameDiv);
+        allGames.forEach((game: GameProps) => {
+            const newGame = this.createNewGame(game);
+            this.generateGames(newGame);
         });
     }
 
