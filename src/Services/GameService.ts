@@ -17,7 +17,7 @@ export class GameService {
     get getAllGames() {
         const allGames = this.storage.getAllGames();
 
-        allGames.sort((game1: any, game2: any) => {
+        allGames.sort((game1: GameProps, game2: GameProps) => {
             let gameTime1 = parseInt(game1.gameTime);
             let gameTime2 = parseInt(game2.gameTime);
 
