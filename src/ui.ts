@@ -24,21 +24,6 @@ export class UI {
 
         html += `<div class="game-date">${util.todaysDate()}</div>`;
 
-        allGames.sort((game1: any, game2: any) => {
-            let gameTime1 = parseInt(game1.gameTime);
-            let gameTime2 = parseInt(game2.gameTime);
-
-            if (gameTime1 < gameTime2) {
-                return -1;
-            }
-
-            if (gameTime1 > gameTime2) {
-                return 1;
-            }
-
-            return 0;
-        });
-
         allGames.forEach(function (game: GameProps) {
             console.log(game);
             let homeTeamVal =
