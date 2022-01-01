@@ -1,4 +1,3 @@
-import { games } from './data';
 import { GameProps } from './Game';
 import { GameService } from './Services/GameService';
 import { util } from './util';
