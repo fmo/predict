@@ -24,7 +24,6 @@ export class UI {
         html += `<div class="game-date">${util.todaysDate()}</div>`;
 
         allGames.forEach(function (game: GameProps) {
-            console.log(game);
             let homeTeamVal =
                 game.homeTeamGuess !== null ? game.homeTeamGuess : '';
             let awayTeamVal =
