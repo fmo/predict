@@ -1,29 +1,32 @@
 export class ScoreUi {
     createScoreDiv(homeTeamGuess: string, awayTeamGuess: string) {
-        let scoreDiv = document.createElement('div');
-        scoreDiv.className = 'score';
-
         const homeTeamInput = this.createTeamInput(homeTeamGuess, 'home-team');
-        scoreDiv.appendChild(homeTeamInput);
-
-        let spanElement = document.createElement('span');
-        let spanText = document.createTextNode(' - ');
-        spanElement.appendChild(spanText);
-
-        scoreDiv.appendChild(spanElement);
-
+        const seperator = this.createSeperator();
         const awayTeamInput = this.createTeamInput(awayTeamGuess, 'away-team');
+
+        const scoreDiv = document.createElement('div');
+        scoreDiv.className = 'score';
+        scoreDiv.appendChild(homeTeamInput);
+        scoreDiv.appendChild(seperator);
         scoreDiv.appendChild(awayTeamInput);
 
         return scoreDiv;
     }
 
     createTeamInput(guess: string, team: string) {
-        let homeTeamInput = document.createElement('input');
-        homeTeamInput.type = 'text';
-        homeTeamInput.value = guess;
-        homeTeamInput.className = team;
+        const teamInput = document.createElement('input');
+        teamInput.type = 'text';
+        teamInput.value = guess;
+        teamInput.className = team;
 
-        return homeTeamInput;
+        return teamInput;
+    }
+
+    createSeperator() {
+        const seperatorElement = document.createElement('span');
+        const seperatorText = document.createTextNode(' - ');
+        seperatorElement.appendChild(seperatorText);
+
+        return seperatorElement;
     }
 }
