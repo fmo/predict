@@ -1,9 +1,11 @@
 import { GameProps } from './Game';
+import { GamesUi } from './gamesUi';
 import { GameService } from './Services/GameService';
 import { util } from './util';
 
 export class UI {
     gameService: GameService;
+    gamesUi: GamesUi;
 
     constructor() {
         this.populateGames = this.populateGames.bind(this);
