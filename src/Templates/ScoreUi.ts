@@ -1,32 +1,32 @@
-export class ScoreUi {
-    createScoreDiv(homeTeamGuess: string, awayTeamGuess: string) {
-        const homeTeamInput = this.createTeamInput(homeTeamGuess, 'home-team');
-        const seperator = this.createSeperator();
-        const awayTeamInput = this.createTeamInput(awayTeamGuess, 'away-team');
+const createTeamInput = (guess: string, team: string) => {
+    const teamInput = document.createElement('input');
+    teamInput.type = 'text';
+    teamInput.value = guess;
+    teamInput.className = team;
 
-        const scoreDiv = document.createElement('div');
-        scoreDiv.className = 'score';
-        scoreDiv.appendChild(homeTeamInput);
-        scoreDiv.appendChild(seperator);
-        scoreDiv.appendChild(awayTeamInput);
+    return teamInput;
+};
 
-        return scoreDiv;
-    }
+const createSeperator = () => {
+    const seperatorElement = document.createElement('span');
+    const seperatorText = document.createTextNode(' - ');
+    seperatorElement.appendChild(seperatorText);
 
-    createTeamInput(guess: string, team: string) {
-        const teamInput = document.createElement('input');
-        teamInput.type = 'text';
-        teamInput.value = guess;
-        teamInput.className = team;
+    return seperatorElement;
+};
 
-        return teamInput;
-    }
+const CreateScoreDiv = (homeTeamGuess: string, awayTeamGuess: string) => {
+    const homeTeamInput = createTeamInput(homeTeamGuess, 'home-team');
+    const seperator = createSeperator();
+    const awayTeamInput = createTeamInput(awayTeamGuess, 'away-team');
 
-    createSeperator() {
-        const seperatorElement = document.createElement('span');
-        const seperatorText = document.createTextNode(' - ');
-        seperatorElement.appendChild(seperatorText);
+    const scoreDiv = document.createElement('div');
+    scoreDiv.className = 'score';
+    scoreDiv.appendChild(homeTeamInput);
+    scoreDiv.appendChild(seperator);
+    scoreDiv.appendChild(awayTeamInput);
 
-        return seperatorElement;
-    }
-}
+    return scoreDiv;
+};
+
+export default CreateScoreDiv;

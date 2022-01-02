@@ -1,10 +1,8 @@
 import { util } from '../util';
 import { GameProps } from '../Game';
-import { ScoreUi } from './ScoreUi';
+import CreateScoreDiv from './ScoreUi';
 
 export class GamesUi {
-    scoreUiService = new ScoreUi();
-
     constructor() {}
 
     createDateElement() {
@@ -35,7 +33,7 @@ export class GamesUi {
 
         const gameTime = this.createDivWithText('game-time', game.gameTime);
 
-        const scoreDiv = this.scoreUiService.createScoreDiv(
+        const scoreDiv = CreateScoreDiv(
             `${game.homeTeamGuess}`,
             `${game.awayTeamGuess}`
         );
