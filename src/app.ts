@@ -1,5 +1,5 @@
-import { UI } from './Ui';
+import { Ui } from './Ui';
 import '../style/style.scss';
 
-const uiService = new UI();
+const uiService = new Ui();
 uiService.init();

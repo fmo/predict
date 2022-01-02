@@ -1,6 +1,6 @@
-import { UI } from './UI';
+import { Ui } from './Ui';
 
-const ui = new UI();
+const ui = new Ui();
 
 beforeEach(() => {
     localStorage.clear();

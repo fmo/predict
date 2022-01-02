@@ -3,7 +3,7 @@ import { GamesUi } from './GamesUi';
 import { GameService } from './Services/GameService';
 import { util } from './util';
 
-export class UI {
+export class Ui {
     gameService: GameService;
     gamesUi = new GamesUi();
 
