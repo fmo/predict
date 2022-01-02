@@ -1,16 +1,13 @@
 import { util } from './util';
 
 export class GamesUi {
-    parentGamesDiv: any;
-
-    constructor() {
-        this.parentGamesDiv = document.querySelector('.games');
-        this.parentGamesDiv.innerHTML = '';
-    }
+    constructor() {}
 
     createDateElement() {
+        const parentGamesDiv = document.querySelector('.games');
+        parentGamesDiv.innerHTML = '';
         const dateDiv = this.createDivWithText('game-date', util.todaysDate());
-        this.parentGamesDiv.insertAdjacentElement('afterbegin', dateDiv);
+        parentGamesDiv.insertAdjacentElement('afterbegin', dateDiv);
     }
 
     createDivWithText(className: string, text: string) {

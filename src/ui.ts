@@ -5,14 +5,11 @@ import { util } from './util';
 
 export class UI {
     gameService: GameService;
-    gamesUi: any;
+    gamesUi = new GamesUi();
 
     constructor() {
         this.populateGames = this.populateGames.bind(this);
         this.gameService = GameService.gameServiceWithLocalStorage();
-        this.gamesUi = () => {
-            return new GamesUi();
-        };
     }
 
     getGameId(gameId: string): number {
