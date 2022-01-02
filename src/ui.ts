@@ -1,15 +1,18 @@
 import { GameProps } from './Game';
-import { GamesUi } from './gamesUi';
+import { GamesUi } from './GamesUi';
 import { GameService } from './Services/GameService';
 import { util } from './util';
 
 export class UI {
     gameService: GameService;
-    gamesUi: GamesUi;
+    gamesUi: any;
 
     constructor() {
         this.populateGames = this.populateGames.bind(this);
         this.gameService = GameService.gameServiceWithLocalStorage();
+        this.gamesUi = () => {
+            return new GamesUi();
+        };
     }
 
     getGameId(gameId: string): number {
@@ -34,13 +37,6 @@ export class UI {
         homeTeamInput.className = team;
 
         return homeTeamInput;
-    }
-
-    createDateElement() {
-        const parentGamesDiv = document.querySelector('.games');
-        parentGamesDiv.innerHTML = '';
-        const dateDiv = this.createDivWithText('game-date', util.todaysDate());
-        parentGamesDiv.insertAdjacentElement('afterbegin', dateDiv);
     }
 
     createScoreDiv(homeTeamGuess: string, awayTeamGuess: string) {
@@ -94,7 +90,7 @@ export class UI {
     populateGames() {
         const allGames = this.gameService.getAllGames;
 
-        this.createDateElement();
+        this.gamesUi.createDateElement();
 
         allGames.forEach((game: GameProps) => {
             const newGame = this.createNewGame(game);

@@ -1,7 +1,9 @@
 import { GamesUi } from './GamesUi';
 
-const gamesUi = new GamesUi();
+gamesUi: () => {
+    return new GamesUi();
+};
 
 test('should be instance of GamesUi', () => {
-    expect(gamesUi).toBeInstanceOf(GamesUi);
+    expect(this.gamesUi).toBeInstanceOf(GamesUi);
 });
