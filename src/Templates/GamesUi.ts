@@ -1,10 +1,11 @@
 import { util } from '../util';
 import { GameProps } from '../Game';
+import { ScoreUi } from './ScoreUi';
 
 export class GamesUi {
-    constructor() {
-        this.createScoreDiv = this.createScoreDiv.bind(this);
-    }
+    scoreUiService = new ScoreUi();
+
+    constructor() {}
 
     createDateElement() {
         const parentGamesDiv = document.querySelector('.games');
@@ -22,34 +23,6 @@ export class GamesUi {
         return divElement;
     }
 
-    createTeamInput(guess: string, team: string) {
-        let homeTeamInput = document.createElement('input');
-        homeTeamInput.type = 'text';
-        homeTeamInput.value = guess;
-        homeTeamInput.className = team;
-
-        return homeTeamInput;
-    }
-
-    createScoreDiv(homeTeamGuess: string, awayTeamGuess: string) {
-        let scoreDiv = document.createElement('div');
-        scoreDiv.className = 'score';
-
-        const homeTeamInput = this.createTeamInput(homeTeamGuess, 'home-team');
-        scoreDiv.appendChild(homeTeamInput);
-
-        let spanElement = document.createElement('span');
-        let spanText = document.createTextNode(' - ');
-        spanElement.appendChild(spanText);
-
-        scoreDiv.appendChild(spanElement);
-
-        const awayTeamInput = this.createTeamInput(awayTeamGuess, 'away-team');
-        scoreDiv.appendChild(awayTeamInput);
-
-        return scoreDiv;
-    }
-
     createNewGame(game: GameProps) {
         let newGameDiv = document.createElement('div');
         newGameDiv.id = `game-${game.id}`;
@@ -62,7 +35,7 @@ export class GamesUi {
 
         const gameTime = this.createDivWithText('game-time', game.gameTime);
 
-        const scoreDiv = this.createScoreDiv(
+        const scoreDiv = this.scoreUiService.createScoreDiv(
             `${game.homeTeamGuess}`,
             `${game.awayTeamGuess}`
         );
