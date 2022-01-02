@@ -1,5 +1,5 @@
-import { util } from './util';
-import { GameProps } from './Game';
+import { util } from '../util';
+import { GameProps } from '../Game';
 
 export class GamesUi {
     constructor() {

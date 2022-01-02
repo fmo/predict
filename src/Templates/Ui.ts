@@ -1,7 +1,7 @@
-import { GameProps } from './Game';
+import { GameProps } from '../Game';
 import { GamesUi } from './GamesUi';
-import { GameService } from './Services/GameService';
-import { util } from './util';
+import { GameService } from '../Services/GameService';
+import { util } from '../util';
 
 export class Ui {
     gameService: GameService;
