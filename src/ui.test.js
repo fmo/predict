@@ -1,4 +1,4 @@
-import { UI } from './ui';
+import { UI } from './Ui';
 
 const ui = new UI();
 
